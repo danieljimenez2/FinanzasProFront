@@ -1,0 +1,27 @@
+.sectores {
+  .card-img-wrapper {
+    height: 180px; /* altura fija para todas las imágenes */
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mantiene proporción y recorta lo que sobra */
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-img-wrapper img {
+    transform: scale(1.05); /* efecto hover sutil */
+  }
+
+  .card-body h5 {
+    font-weight: 600;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,21 @@
+<section class="sectores py-4 bg-black text-white">
+  <div class="container">
+    <h2 class="text-center mb-5">Mercados por Sector</h2>
+    <div class="row g-5">
+      <div class="col-md-4" *ngFor="let sector of sectores">
+        <!-- RouterLink dinámico -->
+        <a [routerLink]="['/sector', sector.name]" class="text-decoration-none text-white">
+          <div class="card h-100 bg-dark border-0 shadow-sm">
+            <div class="card-img-wrapper">
+              <img [src]="sector.image" [alt]="sector.name" class="card-img-top">
+            </div>
+            <div class="card-body text-white">
+              <h5 class="card-title">{{ sector.name }}</h5>
+              <p class="card-text">{{ sector.description }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

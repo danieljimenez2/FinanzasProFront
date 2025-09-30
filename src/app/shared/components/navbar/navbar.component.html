@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm position-relative">
+  <div class="container d-flex align-items-center">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold text-white me-3" href="#">FinanzasPro</a>
+
+    <!-- Links del navbar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <!-- Barra de búsqueda -->
+        <div class="search-wrapper me-auto" [class.active]="isSearchActive">
+          <input type="text" class="search-input" placeholder="Buscar activos..." [(ngModel)]="searchQuery"
+            (focus)="onSearchFocus()" (blur)="onSearchBlur()" (input)="onSearchInput()" name="search">
+          <!-- Botón X para limpiar -->
+          <span class="clear-btn" *ngIf="searchQuery" (click)="clearSearch()">&times;</span>
+
+          <div class="search-overlay" *ngIf="isSearchActive && searchResults.length > 0">
+            <ul class="search-results">
+              <li *ngFor="let company of searchResults">
+                <a [routerLink]="['/compañia', company.companySymbol]" class="company-link">
+                  <strong>{{ company.companySymbol }}</strong> - {{ company.companyName }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <li class="nav-item" style="margin-left:10px">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/mercados-industria">Mercados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre este producto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

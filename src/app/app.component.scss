@@ -1,0 +1,11 @@
+.floating-hero {
+  position: absolute; /* no ocupa espacio en el flujo */
+  top: 0; /* ajusta si quieres que empiece justo debajo del navbar */
+  left: 0;
+  width: 100%;
+  height: 100vh; /* altura mínima */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  pointer-events: none; /* no interfiere con clicks del contenido */
+  z-index: -100; /* que quede por encima de todo lo demás */
+}

@@ -1,0 +1,34 @@
+.hero {
+  min-height: 80vh;
+  background: url('https://images.unsplash.com/photo-1556742400-b5b7c51229d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  background-color: #000;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); // capa oscura
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+}
+.img-wrapper {
+  width: 100%;
+  height: 250px; /* Altura fija para todas las imágenes */
+  overflow: hidden;
+  border-radius: 0.5rem; /* opcional, mantiene las esquinas redondeadas */
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene la proporción y recorta el exceso */
+}
