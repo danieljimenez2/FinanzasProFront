@@ -1,13 +1,15 @@
-export interface DatosCompañia {
+import { DatosEmpresa } from "./datos_empresa";
+export interface DatosCompania {
   company_symbol: string;
+  datosEmpresa: DatosEmpresa;
   moneda: string;
-  ISIN: string;
+  isin: string;
   bolsa: string;
   sector: string;
   industria: string;
-  país: string;
+  pais: string;
   empleados: number;
   ceo: string;
   web: string;
-  fecha_ipo: Date;
+  fechaIpo: Date;
 }

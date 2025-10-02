@@ -1,8 +1,10 @@
+import { DatosEmpresa } from "./datos_empresa";
 export interface Analistas_score {
-    company_symbol: string;
+    companySymbol: string;
+    datosEmpresa: DatosEmpresa;
     rating: string;
     score: number;
     recomendation: string;
-    Altman_score: number;
-    piotroski_score: number;
+    altmanScore: number;
+    piotroskiScore: number;
 }

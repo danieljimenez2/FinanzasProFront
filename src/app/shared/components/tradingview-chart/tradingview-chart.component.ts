@@ -24,10 +24,10 @@ export class TradingviewChartComponent implements AfterViewInit {
         symbol: this.companySymbol, // ticker de la empresa
         interval: 'D',
         timezone: 'Etc/UTC',
-        theme: 'light',
+        theme: 'dark',
         style: '1',
         locale: 'es',
-        toolbar_bg: '#f60000ff',
+        toolbar_bg: '#ffffffff',
         enable_publishing: false,
         hide_top_toolbar: false,
         allow_symbol_change: true,

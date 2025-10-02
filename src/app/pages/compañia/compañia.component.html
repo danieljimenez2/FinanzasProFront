@@ -1,4 +1,9 @@
 
-  <app-tradingview-chart [companySymbol]="this.company_symbol"></app-tradingview-chart>
-  {{this.company_symbol}}
-
+<!-- TradingView chart -->
+<app-tradingview-chart [companySymbol]="company_symbol"></app-tradingview-chart>
+<div class="container my-2">
+  
+  <app-datos_compania [datosCompania]="this.datosCompania" [fechaIpo]="fechaIpo"></app-datos_compania>
+  <br><br>
+  <app-datos_analistas_score *ngIf="datosScore"  [datosScore]="this.datosScore"></app-datos_analistas_score>
+</div>
