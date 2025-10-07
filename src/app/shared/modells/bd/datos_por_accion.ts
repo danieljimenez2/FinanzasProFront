@@ -3,5 +3,5 @@ export interface Datos_por_accion {
     epsTtm: number;
     cajaPorAccion: number;
     valorEnLibrosPorAccion: number;
-    ffcfPorAccion: number;
+    fcfPorAccion: number;
 }

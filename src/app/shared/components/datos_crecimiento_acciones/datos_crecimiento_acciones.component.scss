@@ -1,27 +1,50 @@
-.analistas-card {
+.crecimiento-card {
   background: #1c1c1e;
   border-radius: 12px;
   color: #f1f1f1;
   border: 1px solid #333;
   overflow: hidden;
-  padding: 1rem;
 
-  .card-header {
-    h3 {
-      font-weight: 600;
-      font-size: 1.7rem;
-      margin-bottom: 0.5rem;
-      padding-bottom:5px;
-      .symbol {
-        font-weight: 400;
-        color: #0d6efd;
-        margin-left: 0.5rem;
-        font-size: 0.95rem;
+  .accordion-button {
+    background-color: #2a2a2d;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &::after {
+      filter: invert(1);
+      color: #ffffff !important;
+    }
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:not(.collapsed) {
+      background-color: #333;
+      color: #e7e7e7;
+      box-shadow: none;
+
+      i {
+        transform: rotate(180deg);
       }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     }
   }
 
-  .card-body {
+  .accordion-body {
+    background-color: #1c1c1e;
+    padding: 1rem 1.5rem;
+
+    h3 {
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+
     .datos-generales {
       .dato-item {
         display: flex;
@@ -43,20 +66,18 @@
           color: #0d6efd;
           flex: 0 0 55%;
           padding-left: 10px;
+          align-content: center;
+          height: 30px;
           font-weight: 600;
           font-size: 0.95rem;
         }
 
-        span, a {
+        span {
           flex: 1;
           text-align: right;
           color: #f1f1f1;
           font-size: 0.95rem;
           word-break: break-word;
-        }
-
-        a.company-link {
-          text-decoration: underline;
         }
       }
     }

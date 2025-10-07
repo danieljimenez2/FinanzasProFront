@@ -1,0 +1,99 @@
+<div class="accordion accordion-flush" id="accordionCrecimiento" *ngIf="datosCrecimiento">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingCrecimiento">
+      <button
+        class="accordion-button collapsed d-flex justify-content-between align-items-center"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseCrecimiento"
+        aria-expanded="false"
+        aria-controls="collapseCrecimiento">
+        <strong>📈 Crecimiento y Datos por Acción</strong>
+        <i class="bi bi-chevron-down text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      id="collapseCrecimiento"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingCrecimiento"
+      data-bs-parent="#accordionCrecimiento">
+
+      <div class="accordion-body">
+        <!-- Crecimiento -->
+        <h3>Crecimiento:</h3>
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Ingresos CAGR 10 años:</strong>
+              <span>{{ datosCrecimiento?.revenuesCagr10y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Ingresos CAGR 5 años:</strong>
+              <span>{{ datosCrecimiento?.revenuesCagr5y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Dividendos CAGR 10 años:</strong>
+              <span>{{ datosCrecimiento?.dividendsCagr10y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Dividendos CAGR 5 años:</strong>
+              <span>{{ datosCrecimiento?.dividendsCagr5y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Equity CAGR 5 años:</strong>
+              <span>{{ datosCrecimiento?.equityCagr5y || '—' }}%</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Cashflow CAGR 10 años:</strong>
+              <span>{{ datosCrecimiento?.cashflowCagr10y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Cashflow CAGR 5 años:</strong>
+              <span>{{ datosCrecimiento?.cashflowCagr5y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>EPS CAGR 10 años:</strong>
+              <span>{{ datosCrecimiento?.epsCagr10y || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>EPS CAGR 5 años:</strong>
+              <span>{{ datosCrecimiento?.epsCagr5y || '—' }}%</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-3">
+
+        <!-- Datos por Acción -->
+        <h3>Datos por Acción:</h3>
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Caja por acción:</strong>
+              <span>{{ datosPorAccion?.cajaPorAccion || '—' }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Valor en libros:</strong>
+              <span>{{ datosPorAccion?.valorEnLibrosPorAccion || '—' }}</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>EPS TTM:</strong>
+              <span>{{ datosPorAccion?.epsTtm || '—' }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>FCF por acción:</strong>
+              <span>{{ datosPorAccion?.fcfPorAccion || '—' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

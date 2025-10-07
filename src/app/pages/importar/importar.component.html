@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+
+      <!-- Título de formatos admitidos -->
+      <h5 class="text-white mb-3">Formatos admitidos: CSV y CSV UTF-8</h5>
+
+      <!-- Dropzone -->
+      <div class="dropzone p-5 rounded shadow-lg position-relative"
+           [class.dragover]="isDragOver"
+           (dragover)="onDragOver($event)"
+           (dragleave)="onDragLeave($event)"
+           (drop)="onDrop($event)">
+        
+        <!-- Icono central si no hay archivo -->
+        <i *ngIf="!selectedFile" class="bi bi-file-earmark-arrow-up display-1 text-primary mb-3"></i>
+        
+        <!-- Mensaje de estado -->
+        <h4 *ngIf="!selectedFile" class="mb-2">Arrastra y suelta tu archivo CSV</h4>
+        <p *ngIf="!selectedFile" class="text-muted">o haz click para seleccionar un archivo CSV o CSV UTF-8</p>
+
+        <!-- Si archivo cargado -->
+        <div *ngIf="selectedFile" class="file-info text-center">
+          <i class="bi bi-file-earmark-check display-1 text-success mb-2"></i>
+          <h5 class="text-success mb-1">{{ selectedFile?.name }}</h5>
+          <p class="text-success">Archivo listo para subir</p>
+        </div>
+
+        <!-- Si no hay archivo y se intentó subir -->
+        <p *ngIf="showError" class="text-danger mt-2">¡No se ha seleccionado ningún archivo!</p>
+
+        <!-- Input real -->
+        <input type="file" accept=".csv" class="form-control-file" (change)="onFileSelected($event)">
+      </div>
+
+      <!-- Botón de subida -->
+      <div class="mt-3">
+        <button class="btn btn-success btn-lg w-100" (click)="uploadFile()">Subir Archivo</button>
+      </div>
+    </div>
+  </div>
+</div>

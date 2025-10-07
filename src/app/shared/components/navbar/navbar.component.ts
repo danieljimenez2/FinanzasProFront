@@ -34,7 +34,6 @@ export class NavbarComponent{
     this.busquedaService.searchCompanies(this.searchQuery)
       .subscribe({
         next: (results) => {
-          console.log('Resultados recibidos:', results); // <--- depuración
           this.searchResults = results;
         },
         error: (err) => {

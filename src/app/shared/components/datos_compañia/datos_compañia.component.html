@@ -1,33 +1,62 @@
-  <!-- Detalles de la compañía -->
-  <div *ngIf="datosCompania" id="datosCompañia" class="company-card shadow-lg mt-5 w-100">
-    <div class="card-header">
-      <h3>{{ this.datosCompania?.datosEmpresa?.companyName }}
-        <span class="symbol">{{ datosCompania?.company_symbol }}</span>
-      </h3>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-md-6">
-          <p><strong>ISIN: </strong> <span class="ellipsis">{{ datosCompania?.isin }}</span></p>
-          <p><strong>Moneda: </strong> {{ datosCompania?.moneda }}</p>
-          <p><strong>Bolsa: </strong> {{ datosCompania?.bolsa }}</p>
-          <p><strong>Sector: </strong> <span class="ellipsis"> {{ datosCompania?.sector }}</span></p>
-          <p><strong>Industria: </strong> <span class="ellipsis"> {{ datosCompania?.industria }}</span></p>
-        </div>
+<div class="analistas-card shadow-lg mt-5 w-100" *ngIf="datosCompania">
+  <div class="card-header">
+    <h3>
+      {{ datosCompania?.datosEmpresa?.companyName }}
+      <span class="symbol">{{ datosCompania?.company_symbol }}</span>
+    </h3>
+  </div>
 
-        <!-- Columna 2 -->
-        <div class="col-md-5">
-          <p><strong>País: </strong> {{ datosCompania?.pais }}</p>
-          <p><strong>Empleados: </strong> {{ datosCompania?.empleados | number }}</p>
-          <p><strong>CEO: </strong> <span class="ellipsis"> {{ datosCompania?.ceo }}</span></p>
-          <p><strong>Web: </strong>
-            <a [href]="datosCompania?.web" target="_blank" class="company-link ellipsis">
-              {{ datosCompania?.web }}
-            </a>
-          </p>
-          <p><strong>Fecha IPO: </strong> {{ this.fechaIpo| fechaEspanola:'largo' }}</p>
+  <div class="card-body">
+    <div class="row datos-generales">
+      <!-- Columna 1 -->
+      <div class="col-md-6">
+        <div class="dato-item">
+          <strong>ISIN:</strong>
+          <span class="ellipsis">{{ datosCompania?.isin }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Moneda:</strong>
+          <span>{{ datosCompania?.moneda }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Bolsa:</strong>
+          <span>{{ datosCompania?.bolsa }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Sector:</strong>
+          <span class="ellipsis">{{ datosCompania?.sector }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Industria:</strong>
+          <span class="ellipsis">{{ datosCompania?.industria }}</span>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-6">
+        <div class="dato-item">
+          <strong>País:</strong>
+          <span>{{ datosCompania?.pais }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Empleados:</strong>
+          <span>{{ datosCompania?.empleados | number }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>CEO:</strong>
+          <span class="ellipsis">{{ datosCompania?.ceo }}</span>
+        </div>
+        <div class="dato-item">
+          <strong>Web:</strong>
+          <a [href]="datosCompania?.web" target="_blank" class="company-link ellipsis">
+            {{ datosCompania?.web }}
+          </a>
+        </div>
+        <div class="dato-item">
+          <strong>Fecha IPO:</strong>
+          <span>{{ fechaIpo | fechaEspanola:'largo' }}</span>
         </div>
       </div>
     </div>
   </div>
+</div>

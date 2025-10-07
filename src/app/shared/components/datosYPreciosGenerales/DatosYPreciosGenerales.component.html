@@ -1,0 +1,63 @@
+<div class="accordion accordion-flush" id="accordionPrecioDatosGenerales" *ngIf="precioYDatosGenerales">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingPrecioDatosGenerales">
+      <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button"
+        data-bs-toggle="collapse" data-bs-target="#collapsePrecioDatosGenerales" aria-expanded="false"
+        aria-controls="collapsePrecioDatosGenerales">
+        <strong>💴 Precio y Datos Generales</strong>
+        <i class="bi bi-chevron-down text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div id="collapsePrecioDatosGenerales" class="accordion-collapse collapse"
+      aria-labelledby="headingPrecioDatosGenerales" data-bs-parent="#accordionPrecioDatosGenerales">
+
+<div class="accordion-body">
+  <div class="row datos-generales">
+    <div class="col-md-6">
+      <div class="dato-item">
+        <strong>Precio actual:</strong>
+        <span>{{ precioYDatosGenerales?.precio | number:'1.2-2' }} €</span>
+      </div>
+      <div class="dato-item">
+        <strong>Market Cap:</strong>
+        <span>{{ precioYDatosGenerales?.marketCap | number }} €</span>
+      </div>
+      <div class="dato-item">
+        <strong>Tamaño de mercado:</strong>
+        <span>{{ precioYDatosGenerales?.tamanoMercado || '—' }}</span>
+      </div>
+      <div class="dato-item">
+        <strong>Situación de caja:</strong>
+        <span>{{ precioYDatosGenerales?.situacionCaja || '—' }}</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="dato-item">
+        <strong>Valor de empresa:</strong>
+        <span>{{ precioYDatosGenerales?.valorEmpresa || '—' }} €</span>
+      </div>
+      <div class="dato-item">
+        <strong>Último dividendo:</strong>
+        <span>{{ precioYDatosGenerales?.ultimoDividendo || '—' }} €</span>
+      </div>
+      <div class="dato-item">
+        <strong>Beta:</strong>
+        <span>{{ precioYDatosGenerales?.beta || '—' }}</span>
+      </div>
+      <div class="dato-item">
+        <strong>PER TTM:</strong>
+        <span>{{ precioYDatosGenerales?.perTtm || '—' }}</span>
+      </div>
+      <div class="dato-item">
+        <strong>Relación min/máx 52s:</strong>
+        <span>{{ precioYDatosGenerales?.min52sMax52s || '—' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>

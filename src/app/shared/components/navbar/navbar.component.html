@@ -8,7 +8,7 @@
       <ul class="navbar-nav ms-auto d-flex align-items-center">
         <!-- Barra de búsqueda -->
         <div class="search-wrapper me-auto" [class.active]="isSearchActive">
-          <input type="text" class="search-input" placeholder="Buscar activos..." [(ngModel)]="searchQuery"
+          <input type="text" class="search-input" autocomplete="off" placeholder="Buscar activos..." [(ngModel)]="searchQuery"
             (focus)="onSearchFocus()" (blur)="onSearchBlur()" (input)="onSearchInput()" name="search">
           <!-- Botón X para limpiar -->
           <span class="clear-btn" *ngIf="searchQuery" (click)="clearSearch()">&times;</span>
@@ -32,10 +32,7 @@
           <a class="nav-link" routerLink="/mercados-industria">Mercados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre este producto</a>
+          <a class="nav-link" routerLink="/importar-datos">Importar Datos</a>
         </li>
       </ul>
     </div>
