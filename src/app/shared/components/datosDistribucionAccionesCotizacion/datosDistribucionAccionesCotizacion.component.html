@@ -1,0 +1,50 @@
+<div class="accordion accordion-flush" id="accordionCrecimiento">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingCrecimiento">
+      <button
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
+        type="button"
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>💱 Distribución y cotización de las acciones</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingCrecimiento">
+
+      <div class="accordion-body">
+
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Cotización CAGR 5 años:</strong> <span>{{datosDistribucion?.cotizacionCagr5y || '--'}}</span></div>
+            <div class="dato-item"><strong>Cotización CAGR 10 años:</strong> <span>{{datosDistribucion?.cotizacionCagr10y || '--'}}</span></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Porcentaje insiders</strong> <span>{{datosDistribucion?.porcentajeInsiders || '--'}} %</span></div>
+            <div class="dato-item"><strong>Porcentaje institucional:</strong> <span>{{datosDistribucion?.porcentajeInstitucionales || '--'}} %</span></div>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-3">
+
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Variación ACC 10y:</strong>
+              <span>{{datosDistribucion?.variacionAcc10y}}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

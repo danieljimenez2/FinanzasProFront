@@ -1,60 +1,51 @@
 <div class="analistas-card shadow-lg mt-5 w-100" *ngIf="datosCompania">
-  <div class="card-header">
+  <div class="card-header d-flex justify-content-between align-items-center">
     <h3>
       {{ datosCompania?.datosEmpresa?.companyName }}
       <span class="symbol">{{ datosCompania?.company_symbol }}</span>
     </h3>
-  </div>
 
-  <div class="card-body">
+    <!-- Acciones a la derecha -->
+    <div class="acciones-header d-flex align-items-center gap-3">
+      <!-- Ocultar información -->
+      <button type="button" class="btn btn-icon ocultar-btn"
+              title="Ocultar información desplegable"
+              (click)="toggleMostrarInfo()">
+        <i [ngClass]="mostrarInfo ? 'bi bi-eye-fill text-info' : 'bi bi-eye-slash-fill text-secondary'"></i>
+      </button>
+
+      <!-- Favorito -->
+      <button type="button" class="btn btn-icon favorito-btn"
+              title="Marcar el valor como favorito"
+              (click)="toggleFavorito()">
+        <i [ngClass]="esFavorito ? 'bi bi-star-fill text-warning' : 'bi bi-star text-light'"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Contenido visible sólo si mostrarInfo = true -->
+  <div class="card-body" *ngIf="mostrarInfo">
     <div class="row datos-generales">
       <!-- Columna 1 -->
       <div class="col-md-6">
-        <div class="dato-item">
-          <strong>ISIN:</strong>
-          <span class="ellipsis">{{ datosCompania?.isin }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>Moneda:</strong>
-          <span>{{ datosCompania?.moneda }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>Bolsa:</strong>
-          <span>{{ datosCompania?.bolsa }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>Sector:</strong>
-          <span class="ellipsis">{{ datosCompania?.sector }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>Industria:</strong>
-          <span class="ellipsis">{{ datosCompania?.industria }}</span>
-        </div>
+        <div class="dato-item"><strong>ISIN:</strong><span>{{ datosCompania?.isin }}</span></div>
+        <div class="dato-item"><strong>Moneda:</strong><span>{{ datosCompania?.moneda }}</span></div>
+        <div class="dato-item"><strong>Bolsa:</strong><span>{{ datosCompania?.bolsa }}</span></div>
+        <div class="dato-item"><strong>Sector:</strong><span>{{ datosCompania?.sector }}</span></div>
+        <div class="dato-item"><strong>Industria:</strong><span>{{ datosCompania?.industria }}</span></div>
       </div>
 
       <!-- Columna 2 -->
       <div class="col-md-6">
-        <div class="dato-item">
-          <strong>País:</strong>
-          <span>{{ datosCompania?.pais }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>Empleados:</strong>
-          <span>{{ datosCompania?.empleados | number }}</span>
-        </div>
-        <div class="dato-item">
-          <strong>CEO:</strong>
-          <span class="ellipsis">{{ datosCompania?.ceo }}</span>
-        </div>
+        <div class="dato-item"><strong>País:</strong><span>{{ datosCompania?.pais }}</span></div>
+        <div class="dato-item"><strong>Empleados:</strong><span>{{ datosCompania?.empleados | numberPunto}}</span></div>
+        <div class="dato-item"><strong>CEO:</strong><span>{{ datosCompania?.ceo }}</span></div>
         <div class="dato-item">
           <strong>Web:</strong>
-          <a [href]="datosCompania?.web" target="_blank" class="company-link ellipsis">
-            {{ datosCompania?.web }}
-          </a>
+          <a [href]="datosCompania?.web" target="_blank" class="company-link">{{ datosCompania?.web }}</a>
         </div>
         <div class="dato-item">
           <strong>Fecha IPO:</strong>
-          <span>{{ fechaIpo | fechaEspanola:'largo' }}</span>
+          <span>{{ fechaIpo | fechaEspanola: 'largo' }}</span>
         </div>
       </div>
     </div>

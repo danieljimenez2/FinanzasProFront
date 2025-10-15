@@ -1,8 +1,8 @@
-import { DatosEmpresa } from "./datos_empresa";
+import { datosEmpresa } from "./datosEmpresa";
 
-export interface Crecimientos_por_accion {
+export interface crecimientosPorAccion {
     companySymbol: string;
-    datosEmpresa: DatosEmpresa;
+    datosEmpresa: datosEmpresa;
     revenuesCagr10y?: number;
     revenuesCagr5y?: number;
     cashflowCagr10y?: number;

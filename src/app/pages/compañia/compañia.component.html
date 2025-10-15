@@ -1,20 +1,40 @@
-
 <!-- TradingView chart -->
 <app-tradingview-chart [companySymbol]="company_symbol"></app-tradingview-chart>
 <div class="container my-2">
-  
-  <app-datos_compania [datosCompania]="this.datosCompania" [fechaIpo]="fechaIpo"></app-datos_compania>
-  
-  <br><br>
-  
-  <app-datos_analistas_score *ngIf="datosScore"  [datosScore]="this.datosScore"></app-datos_analistas_score>
-  <br><br>
-  
-  <app-datos_crecimiento_acciones *ngIf="datosCrecimiento" [datosCrecimiento]="datosCrecimiento" [datosPorAccion]="datosAcciones"></app-datos_crecimiento_acciones>
 
-  <br><br>
+  <app-datos_compania [datosCompania]="this.datosCompania" [fechaIpo]="fechaIpo"
+    (monedaEmitida)="onMonedaSeleccionada($event)" (mostrarInfoCambio)="onMostrarInfoCambiado($event)"
+    (favoritoCambio)="onFavoritoCambiado($event)">
+  </app-datos_compania>
 
-  <app-DatosYPreciosGenerales [precioYDatosGenerales]="datosYPrecioGenerales"></app-DatosYPreciosGenerales>
+  <br>
 
-  
+  <app-datos_analistas_score *ngIf="datosScore" [datosScore]="this.datosScore"
+    [desplegado]="desplegar"></app-datos_analistas_score>
+  <br>
+
+  <app-datos_crecimiento_acciones *ngIf="datosCrecimiento" [datosCrecimiento]="datosCrecimiento"
+    [datosPorAccion]="datosAcciones" [desplegado]="desplegar" [moneda]="monedaActual"></app-datos_crecimiento_acciones>
+
+  <br>
+
+  <app-DatosYPreciosGenerales [precioYDatosGenerales]="datosYPrecioGenerales" [desplegado]="desplegar"
+    [moneda]="monedaActual">
+
+  </app-DatosYPreciosGenerales>
+  <br>
+
+  <app-datosDividendos 
+  [datosDividendos]="datosDividendos"
+  [desplegado]="desplegar"
+  [moneda]="monedaActual"
+  >
+
+  </app-datosDividendos>
+  <br>
+  <app-datosDistribucionAccionesCotizacion
+  [datosDistribucion]="datosDistribucionYCotizacion"
+  [desplegado]="desplegar"
+  [moneda]="monedaActual"
+  ></app-datosDistribucionAccionesCotizacion>
 </div>

@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { BusquedaService } from '../../services/busqueda.service';
-import { DatosEmpresa } from '../../modells/bd/datos_empresa';
+import { BusquedaService } from '../../services/recogerInformacion/busqueda.service';
+import { datosEmpresa } from '../../modells/bd/datosEmpresa';
 import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-navbar',
@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class NavbarComponent{
   searchQuery: string = '';
   isSearchActive: boolean = false;
-  searchResults: DatosEmpresa[] = [];
+  searchResults: datosEmpresa[] = [];
 
   constructor(private busquedaService: BusquedaService) {}
 

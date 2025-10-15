@@ -1,4 +1,4 @@
-export interface Datos_por_accion {
+export interface datosPorAccion {
     companySymbol: string;
     epsTtm: number;
     cajaPorAccion: number;

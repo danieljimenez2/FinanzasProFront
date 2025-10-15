@@ -1,7 +1,7 @@
-import { DatosEmpresa } from "./datos_empresa";
-export interface Analistas_score {
+import { datosEmpresa } from "./datosEmpresa";
+export interface analistasScore {
     companySymbol: string;
-    datosEmpresa: DatosEmpresa;
+    datosEmpresa: datosEmpresa;
     rating: string;
     score: number;
     recomendation: string;

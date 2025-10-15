@@ -1,7 +1,7 @@
-import { DatosEmpresa } from "./datos_empresa";
-export interface DatosCompania {
+import { datosEmpresa } from "./datosEmpresa";
+export interface datosCompania {
   company_symbol: string;
-  datosEmpresa: DatosEmpresa;
+  datosEmpresa: datosEmpresa;
   moneda: string;
   isin: string;
   bolsa: string;

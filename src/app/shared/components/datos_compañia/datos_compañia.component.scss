@@ -7,16 +7,53 @@
   padding: 1rem;
 
   .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     h3 {
       font-weight: 600;
       font-size: 1.7rem;
       margin-bottom: 0.5rem;
-      padding-bottom:5px;
+      padding-bottom: 5px;
+
       .symbol {
         font-weight: 400;
         color: #0d6efd;
         margin-left: 0.5rem;
         font-size: 0.95rem;
+      }
+    }
+
+    .acciones-header {
+      display: flex;
+      gap: 1.5rem;
+      margin-right:10px;
+      .btn-icon {
+        background: transparent;
+        border: none;
+        color: #f1f1f1;
+        font-size: 1.8rem;
+        transition: color 0.25s ease, transform 0.2s ease;
+        
+
+        &:hover {
+          transform: scale(1.15);
+        }
+
+        &.favorito-btn {
+          color: #f1c40f; // amarillo para modo oscuro
+          &:hover {
+            color: #ffd700;
+          }
+        }
+
+        &.ocultar-btn {
+          color: #888;
+          &:hover {
+            color: #d9534f; // rojo sutil
+          }
+        }
       }
     }
   }
@@ -41,7 +78,7 @@
 
         strong {
           color: #0d6efd;
-          flex: 0 0 55%;
+          flex: 0 0 69%;
           padding-left: 10px;
           font-weight: 600;
           font-size: 0.95rem;
@@ -49,7 +86,7 @@
 
         span, a {
           flex: 1;
-          text-align: right;
+          text-align: left;
           color: #f1f1f1;
           font-size: 0.95rem;
           word-break: break-word;

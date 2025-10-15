@@ -1,23 +1,22 @@
 <div class="accordion accordion-flush" id="accordionAnalistas" *ngIf="datosScore">
   <div class="accordion-item analistas-card shadow-lg">
-    <h2 class="accordion-header d-flex justify-content-between align-items-center" id="headingAnalistas">
+    <h2 class="accordion-header" id="headingAnalistas">
       <button
-        class="accordion-button collapsed d-flex justify-content-between align-items-center"
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseAnalistas"
-        aria-expanded="false"
-        aria-controls="collapseAnalistas">
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
         <strong>📊 Valoración de Analistas de "{{ datosScore?.datosEmpresa?.companyName }}"</strong>
-        <i class="bi bi-chevron-down text-white ms-auto"></i>
+        <i class="bi text-white ms-auto"></i>
       </button>
     </h2>
 
     <div
-      id="collapseAnalistas"
-      class="accordion-collapse collapse"
-      aria-labelledby="headingAnalistas"
-      data-bs-parent="#accordionAnalistas">
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingAnalistas">
 
       <div class="accordion-body">
         <div class="row datos-generales">

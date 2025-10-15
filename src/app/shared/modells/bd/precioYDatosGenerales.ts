@@ -1,5 +1,5 @@
-export interface Precio_y_datos_generales {
-    company_symbol: string;
+export interface precioYDatosGenerales {
+    companySymbol: string;
     precio: number;
     min52sMax52s: number;
     beta: number;
