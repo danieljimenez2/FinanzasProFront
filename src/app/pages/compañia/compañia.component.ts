@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TradingviewChartComponent } from '../../shared/components/tradingview-chart/tradingview-chart.component';
 import { ActivatedRoute } from '@angular/router';
 import { InformacionCompañiaService } from '../../shared/services/recogerInformacion/informacion-compañia.service';
-import { datosCompania} from '../../shared/modells/bd/datosCompañia';
+import { datosCompania } from '../../shared/modells/bd/datosCompañia';
 import { FechaEspañolaPipe } from '../../shared/pipes/fecha-española.pipe';
 import { Datos_compañiaComponent } from '../../shared/components/datos_compañia/datos_compañia.component';
 import { analistasScore } from '../../shared/modells/bd/analistasScore';
@@ -24,15 +24,20 @@ import { ratiosDeValoracion } from '../../shared/modells/bd/ratiosDeValoracion';
 import { ratiosRentabilidad } from '../../shared/modells/bd/ratiosRentabilidad';
 import { valorIntrinseco } from '../../shared/modells/bd/valorIntrinseco';
 import { DatosDistribucionAccionesCotizacionComponent } from '../../shared/components/datosDistribucionAccionesCotizacion/datosDistribucionAccionesCotizacion.component';
+import { DatosEficienciaVentasYActivosComponent } from '../../shared/components/datosEficienciaVentasYActivos/datosEficienciaVentasYActivos.component';
+import { DatosMargenesYGastosVentasComponent } from '../../shared/components/datosMargenesYGastosVentas/datosMargenesYGastosVentas.component';
+import { DatosPosicionFinancieraComponent } from '../../shared/components/datosPosicionFinanciera/datosPosicionFinanciera.component';
+import { DatosRatiosValoracionYRentabilidadComponent } from '../../shared/components/datosRatiosValoracionYRentabilidad/datosRatiosValoracionYRentabilidad.component';
+import { DatosValorIntrinsecoComponent } from '../../shared/components/datosValorIntrinseco/datosValorIntrinseco.component';
 @Component({
   selector: 'app-compañia',
   standalone: true,
-  imports: [CommonModule, TradingviewChartComponent, FechaEspañolaPipe,DatosDistribucionAccionesCotizacionComponent, Datos_compañiaComponent, DatosYPreciosGeneralesComponent, DatosDividendosComponent, Datos_analistas_scoreComponent, Datos_crecimiento_accionesComponent],
+  imports: [CommonModule, TradingviewChartComponent,DatosValorIntrinsecoComponent, DatosRatiosValoracionYRentabilidadComponent, DatosPosicionFinancieraComponent, DatosMargenesYGastosVentasComponent, DatosEficienciaVentasYActivosComponent, DatosDistribucionAccionesCotizacionComponent, Datos_compañiaComponent, DatosYPreciosGeneralesComponent, DatosDividendosComponent, Datos_analistas_scoreComponent, Datos_crecimiento_accionesComponent],
   templateUrl: './compañia.component.html',
   styleUrls: ['./compañia.component.scss']
 })
 export class CompañiaComponent implements OnInit {
-  
+
   constructor(private route: ActivatedRoute, private informacionCompañia: InformacionCompañiaService) { }
 
   company_symbol: string | null = null
@@ -45,18 +50,18 @@ export class CompañiaComponent implements OnInit {
 
   datosAcciones: datosPorAccion | null = null;
   datosDistribucionYCotizacion: distribucionAccionesYCotizacion | null = null;
-  datosDividendos: dividendos |null = null;
+  datosDividendos: dividendos | null = null;
 
   datosEficienciaVentas: eficienciaEnVentasActivos | null = null;
-  datosGastosYActivos: gastosSobreVentas | null = null;
-  datosMargenesCompania: margenesDeLaCompañiaSobreVentas | null = null; 
+  datosGastosVentas: gastosSobreVentas | null = null;
+  datosMargenesCompania: margenesDeLaCompañiaSobreVentas | null = null;
 
-  datosPosicionFinanciera: posicionFinanciera | null = null 
-  datosYPrecioGenerales: precioYDatosGenerales | null = null; 
-  datosRatiosValoracion: ratiosDeValoracion | null = null; 
+  datosPosicionFinanciera: posicionFinanciera | null = null
+  datosYPrecioGenerales: precioYDatosGenerales | null = null;
+  datosRatiosValoracion: ratiosDeValoracion | null = null;
 
   datosRatiosRentabilidad: ratiosRentabilidad | null = null;
-  datosValorIntinseco: valorIntrinseco | null = null;
+  datosValorIntrinseco: valorIntrinseco | null = null;
 
   //Variables sacadas de eventos  
   monedaActual: string | null = null;
@@ -105,7 +110,6 @@ export class CompañiaComponent implements OnInit {
       this.informacionCompañia.recogerDatosPorAccion(this.company_symbol).subscribe({
         next: (data) => {
           this.datosAcciones = data;
-          console.log(`datos por accion: `,this.datosAcciones)
         },
         error: (err) => {
           console.log('Error al cargar los datos por accion', err)
@@ -113,10 +117,10 @@ export class CompañiaComponent implements OnInit {
       });
       //5. Recoger distribucion acciones y cotizacion
       this.informacionCompañia.recogerDistribucionAccionesYCotizacion(this.company_symbol).subscribe({
-        next:(data)=>{
+        next: (data) => {
           this.datosDistribucionYCotizacion = data
         },
-        error:(err)=>{
+        error: (err) => {
           console.error('Error al cargar la distribucion de acciones y cotizacion')
         }
       })
@@ -125,24 +129,46 @@ export class CompañiaComponent implements OnInit {
         next: (data) => {
           this.datosDividendos = data
         },
-        error:(err)=>
-          {
-            console.error('Error al cargar dividendos : ',err)
-          }
+        error: (err) => {
+          console.error('Error al cargar dividendos : ', err)
+        }
       });
       //7. Recoger eficiencia en ventas y activos
       this.informacionCompañia.recogerEficienciaEnVentasYActivos(this.company_symbol).subscribe({
-        next:(data)=>
-          {
-            this.datosEficienciaVentas = data;
-          },
-        error:(err)=>{
+        next: (data) => {
+          this.datosEficienciaVentas = data;
+        },
+        error: (err) => {
           console.error('Error al cargar la eficiencia de ventas y activos', err)
         }
       });
-      //8. Recoger gastos sobre ventas
+      //8. Recoger gastos sobre ventas      
+      this.informacionCompañia.recogerGastosSobreVentas(this.company_symbol).subscribe({
+        next: (data) => {
+          this.datosGastosVentas = data
+        },
+        error: (err) => {
+          console.error(`error al cargar los gastos sobre las ventas`, err)
+        }
+      })
       //9. Recoger margenes de la compañia
+      this.informacionCompañia.recogerMargenesCompania(this.company_symbol).subscribe({
+        next: (data) => {
+          this.datosMargenesCompania = data;
+        },
+        error: (err) => {
+          console.error(`error al cargar los margenes de la compañia`)
+        }
+      })
       //10. Recoger posicion financiera
+      this.informacionCompañia.recogerPosicionFinanciera(this.company_symbol).subscribe({
+        next: (data) => {
+          this.datosPosicionFinanciera = data
+        },
+        error: (err) => {
+          console.error(`error al cargar la posicion financiera`, err);
+        }
+      })
       //11. Recoger precios y datos generales
       this.informacionCompañia.recogerPreciosYDatosGenerales(this.company_symbol).subscribe({
         next: (data) => {
@@ -152,7 +178,35 @@ export class CompañiaComponent implements OnInit {
           console.log('Error al cargar los precios y datos generales de la empresa: ', err)
         }
       });
-
+      //12. Recoger ratios de valoracion
+      this.informacionCompañia.recogerRatiosDeValoracion(this.company_symbol).subscribe({
+        next:(data)=>{
+          this.datosRatiosValoracion = data;
+        },
+        error:(err)=>{
+          console.error('Error al cargar los ratios de valoracion',err)
+        }
+      })
+      //13. Recoger ratios de rentabilidad
+      this.informacionCompañia.recogerRatiosDeRentabilidad(this.company_symbol).subscribe({
+        next:(data)=>{
+          this.datosRatiosRentabilidad=data;
+        },
+        error:(err)=>{
+          console.error('Error al cargar los ratios de rentabilidad',err);
+        }
+      })
+      //14. Recoger valor intrinseco  
+      this.informacionCompañia.recogerValorIntrinseco(this.company_symbol).subscribe({
+        next:(data)=>
+          {
+            this.datosValorIntrinseco = data; 
+          },
+        error:(err)=>
+          {
+            console.error('Error al cargar el valor intrinseco', err)
+          }
+      })
       //Final if
     }
 
@@ -163,16 +217,13 @@ export class CompañiaComponent implements OnInit {
 
   onMonedaSeleccionada(moneda: string) {
     this.monedaActual = moneda;
-    console.log('💰 Moneda seleccionada:', moneda);
   }
 
   onMostrarInfoCambiado(valor: boolean) {
     this.desplegar = valor;
-    console.log('👁 Mostrar info:', valor);
   }
 
   onFavoritoCambiado(valor: boolean) {
     this.favoritoGlobal = valor;
-    console.log('⭐ Favorito:', valor);
   }
 }

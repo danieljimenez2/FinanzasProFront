@@ -1,0 +1,109 @@
+<div class="accordion accordion-flush" id="accordionCrecimiento">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingCrecimiento">
+      <button class="accordion-button" [class.collapsed]="isCollapsed" type="button" (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>📈 Ratios de Valoración y Rentabilidad</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div class="accordion-collapse" [class.show]="!isCollapsed" [class.collapse]="true"
+      aria-labelledby="headingCrecimiento">
+
+      <div class="accordion-body">
+        <!-- ===================== RATIOS DE VALORACIÓN ===================== -->
+        <div class="row datos-generales">
+          <h3>Ratios de Valoración</h3>
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Precio / Ventas:</strong>
+              <span>{{ ratiosValoracion?.precioVentas || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Precio / FCF:</strong>
+              <span>{{ ratiosValoracion?.precioFcf || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Precio / Cash Flow:</strong>
+              <span>{{ ratiosValoracion?.precioCashFlow || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Precio / Valor Libros:</strong>
+              <span>{{ ratiosValoracion?.precioValorLibros || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>EV / Ventas:</strong>
+              <span>{{ ratiosValoracion?.evVentas || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>EV / EBITDA:</strong>
+              <span>{{ ratiosValoracion?.evEbitda || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>EV / CFO:</strong>
+              <span>{{ ratiosValoracion?.evCfo || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>EV / FCF:</strong>
+              <span>{{ ratiosValoracion?.evFcf || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+
+          </div>
+        </div>
+
+        <hr class="border-secondary my-3">
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>% Beneficio:</strong>
+              <span>{{ ratiosValoracion?.porcentajeBeneficio || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>% FCF:</strong>
+              <span>{{ ratiosValoracion?.porcentajeFcf || '—' }}%</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>PEG Ratio (TTM):</strong>
+              <span>{{ ratiosValoracion?.pegRatioTtm || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+            <div class="dato-item">
+              <strong>PER (TTM):</strong>
+              <span>{{ ratiosValoracion?.peTtm || '—' }} {{ moneda | simboloMoneda }}</span>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-3">
+
+        <!-- ===================== RATIOS DE RENTABILIDAD ===================== -->
+        <div class="row datos-generales">
+          <h3>Ratios de Rentabilidad</h3>
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>ROA:</strong>
+              <span>{{ ratiosRentabilidad?.roa || '—' }}%</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>ROCE:</strong>
+              <span>{{ ratiosRentabilidad?.roce || '—' }}%</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>ROE:</strong>
+              <span>{{ ratiosRentabilidad?.roe || '—' }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

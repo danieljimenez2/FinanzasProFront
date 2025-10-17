@@ -24,17 +24,23 @@
   </app-DatosYPreciosGenerales>
   <br>
 
-  <app-datosDividendos 
-  [datosDividendos]="datosDividendos"
-  [desplegado]="desplegar"
-  [moneda]="monedaActual"
-  >
+  <app-datosDividendos [datosDividendos]="datosDividendos" [desplegado]="desplegar" [moneda]="monedaActual">
 
   </app-datosDividendos>
   <br>
-  <app-datosDistribucionAccionesCotizacion
-  [datosDistribucion]="datosDistribucionYCotizacion"
-  [desplegado]="desplegar"
-  [moneda]="monedaActual"
-  ></app-datosDistribucionAccionesCotizacion>
+  <app-datosDistribucionAccionesCotizacion [datosDistribucion]="datosDistribucionYCotizacion" [desplegado]="desplegar"
+    [moneda]="monedaActual"></app-datosDistribucionAccionesCotizacion>
+  <br>
+  <app-datosEficienciaVentasYActivos [datosEficienciaVentas]="datosEficienciaVentas" [desplegado]="desplegar"
+    [moneda]="monedaActual"></app-datosEficienciaVentasYActivos>
+  <br>
+  <app-datosMargenesYGastosVentas [datosGastosVentas]="datosGastosVentas" [datosMargenesVentas]="datosMargenesCompania"
+    [moneda]="monedaActual" [desplegado]="desplegar">
+  </app-datosMargenesYGastosVentas>
+  <br>
+  <app-datosPosicionFinanciera [datosPosicionFinanciera]="datosPosicionFinanciera" [desplegado]="desplegar" [moneda]="monedaActual"></app-datosPosicionFinanciera>
+  <br>
+  <app-datosRatiosValoracionYRentabilidad [ratiosRentabilidad]="datosRatiosRentabilidad" [ratiosValoracion]="datosRatiosValoracion"[desplegado]="desplegar"[moneda]="monedaActual"></app-datosRatiosValoracionYRentabilidad>
+  <br>
+  <app-datosValorIntrinseco [datosValorIntrinseco]="datosValorIntrinseco" [desplegado]="desplegar" [moneda]="monedaActual"></app-datosValorIntrinseco>
 </div>

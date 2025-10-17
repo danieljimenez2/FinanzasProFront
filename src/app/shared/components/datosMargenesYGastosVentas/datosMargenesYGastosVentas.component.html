@@ -1,0 +1,93 @@
+<div class="accordion accordion-flush" id="accordionMargenesYGastosVentas">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingMargenesYGastosVentas">
+      <button
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
+        type="button"
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>💹 Márgenes y Gastos sobre Ventas</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingMargenesYGastosVentas"
+      data-bs-parent="#accordionMargenesYGastosVentas">
+
+      <div class="accordion-body">
+
+        <!-- ===================== MÁRGENES ===================== -->
+        <h3>Márgenes de la Compañía</h3>
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Margen Bruto:</strong>
+              <span>{{ datosMargenesVentas?.margenBruto || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Margen Operativo:</strong>
+              <span>{{ datosMargenesVentas?.margenOperativo || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Margen EBT:</strong>
+              <span>{{ datosMargenesVentas?.margenEBT || '—' }}%</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Margen Neto:</strong>
+              <span>{{ datosMargenesVentas?.margenNeto || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Tasa de Impuesto:</strong>
+              <span>{{ datosMargenesVentas?.tasaImpuesto || '—' }}%</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-3">
+
+        <!-- ===================== GASTOS ===================== -->
+        <h3>Gastos sobre Ventas</h3>
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>SVG / Ingresos (TTM):</strong>
+              <span>{{ datosGastosVentas?.svgToRevenueTtm || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>I+D / Ingresos (TTM):</strong>
+              <span>{{ datosGastosVentas?.iMasdToRevenueTtm || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Capex / CFO (TTM):</strong>
+              <span>{{ datosGastosVentas?.capexToCfoTtm || '—' }}%</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Capex / Ingresos (TTM):</strong>
+              <span>{{ datosGastosVentas?.capexToRevenueTtm || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>SBC / Ingresos (TTM):</strong>
+              <span>{{ datosGastosVentas?.sbcToRevenueTtm || '—' }}%</span>
+            </div>
+            <div class="dato-item">
+              <strong>Ingresos Totales:</strong>
+              <span>{{ datosGastosVentas?.revenues | numberPunto}} {{ moneda | simboloMoneda}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

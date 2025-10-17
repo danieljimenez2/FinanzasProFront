@@ -88,7 +88,7 @@ export class InformacionCompañiaService {
     })
     return this.http.get<gastosSobreVentas>(`${this.baseUrl}compania/gastosYActivos`, { headers })
   }
-  //9. Recoger margenes compañia
+  //9. Recoger margenes compañia sobre ventas
   recogerMargenesCompania(companySymbol: string): Observable<margenesDeLaCompañiaSobreVentas> {
     const headers = new HttpHeaders({
       companySymbol: companySymbol

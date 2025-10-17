@@ -1,0 +1,65 @@
+<div class="accordion accordion-flush" id="accordionCrecimiento">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingCrecimiento">
+      <button
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
+        type="button"
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>📶 Eficiencia de ventas y activos</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingCrecimiento">
+
+      <div class="accordion-body">
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Days Of Inventory Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfInventoryOutstandingTtm || '—'}} </span></div>
+            <div class="dato-item"><strong>Days Of Sales Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfSalesOutstandingTtm || '—'}}  </span></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Rotación activos</strong> <span>{{datosEficienciaVentas?.rotacionActivos || '—'}} </span></div>
+            <div class="dato-item"><strong>rotacion activos fijos:</strong> <span>{{datosEficienciaVentas?.rotacionActivosFijos || '—'}} </span></div>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-3">
+
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Rotación cuentas por cobrar:</strong>
+              <span>{{datosEficienciaVentas?.rotacionCuentasPorCobrar || '—'}} </span>
+            </div>
+            
+            <div class="dato-item">
+              <strong>Rotación Inventarios:</strong>
+              <span>{{datosEficienciaVentas?.rotacionInventarios || '—'}} </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>
+                Rotación proveedores:
+              </strong>
+              <span>{{datosEficienciaVentas?.rotacionProveedores || '—'}}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Ciclo operativo:</strong>
+              <span>{{datosEficienciaVentas?.cicloOperativo || '—'}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

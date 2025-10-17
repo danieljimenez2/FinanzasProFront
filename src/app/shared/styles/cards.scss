@@ -1,0 +1,92 @@
+.crecimiento-card {
+  background: #1c1c1e;
+  border-radius: 12px;
+  color: #f1f1f1;
+  border: 1px solid #333;
+  overflow: hidden;
+  .accordion-button {
+    background-color: #2a2a2d;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &::after {
+      filter: invert(1);
+      color: #ffffff !important;
+    }
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:not(.collapsed) {
+      background-color: #333;
+      color: #e7e7e7;
+      box-shadow: none;
+
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+  }
+
+  /* ========= ANIMACIÓN DE APERTURA / CIERRE ========= */
+  .accordion-collapse {
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+      max-height: 1000px; // suficiente para el contenido
+    }
+  }
+
+  .accordion-body {
+    background-color: #1c1c1e;
+    padding: 1rem 1.5rem;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .datos-generales {
+    .dato-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.4rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      transition: background 0.25s ease, transform 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateY(-1px);
+      }
+
+      strong {
+        color: #0d6efd;
+        flex: 0 0 70%;
+        padding-left: 10px;
+        align-content: center;
+        height: 30px;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      span {
+        flex: 1;
+        text-align: left;
+        color: #f1f1f1;
+        font-size: 0.95rem;
+        word-break: break-word;
+      }
+    }
+  }
+}

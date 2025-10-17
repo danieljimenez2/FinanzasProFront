@@ -1,0 +1,85 @@
+<div class="accordion accordion-flush" id="accordionCrecimiento">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingCrecimiento">
+      <button
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
+        type="button"
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>🏦 Posición Financiera</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingCrecimiento">
+
+      <div class="accordion-body">
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Deuda / Equity:</strong>
+              <span>{{ datosPosicionFinanciera?.deudaEquity || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Deuda / Activos:</strong>
+              <span>{{ datosPosicionFinanciera?.deudaActivos || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Deuda Neta / EBITDA:</strong>
+              <span>{{ datosPosicionFinanciera?.deudaNetaEbitda || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Ratio de Deuda:</strong>
+              <span>{{ datosPosicionFinanciera?.ratioDeuda || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Deuda L/P / Capitalización:</strong>
+              <span>{{ datosPosicionFinanciera?.deudaLongtermCapitalizacion || '—' }}</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Liquidez Corriente:</strong>
+              <span>{{ datosPosicionFinanciera?.liquidez || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Quick Ratio (TTM):</strong>
+              <span>{{ datosPosicionFinanciera?.quickratioTtm || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Cobertura de Intereses:</strong>
+              <span>{{ datosPosicionFinanciera?.coberturaIntereses || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Deuda / Capitalización:</strong>
+              <span>{{ datosPosicionFinanciera?.deudaCapitalizacion || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Calidad del Beneficio Neto:</strong>
+              <span>{{ datosPosicionFinanciera?.calidadBeneficioNeto || '—' }}</span>
+            </div>
+
+            <div class="dato-item">
+              <strong>Multiplicador del Equity:</strong>
+              <span>{{ datosPosicionFinanciera?.companyEquityMultiplier || '—' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

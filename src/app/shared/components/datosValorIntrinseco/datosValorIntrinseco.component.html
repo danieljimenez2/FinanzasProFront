@@ -1,0 +1,52 @@
+<div class="accordion accordion-flush" id="accordionValorIntrinseco">
+  <div class="accordion-item crecimiento-card shadow-lg">
+    <h2 class="accordion-header" id="headingValorIntrinseco">
+      <button
+        class="accordion-button"
+        [class.collapsed]="isCollapsed"
+        type="button"
+        (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed">
+        <strong>💎 Valor Intrínseco</strong>
+        <i class="bi text-white ms-auto"></i>
+      </button>
+    </h2>
+
+    <div
+      class="accordion-collapse"
+      [class.show]="!isCollapsed"
+      [class.collapse]="true"
+      aria-labelledby="headingValorIntrinseco">
+
+      <div class="accordion-body">
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>Cotización actual:</strong>
+              <span>{{ datosValorIntrinseco?.cotizacion || '—' }} {{moneda | simboloMoneda}}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Número de Graham (TTM):</strong>
+              <span>{{ datosValorIntrinseco?.grahamNumberTtm || '—' }} {{moneda | simboloMoneda}}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Valor Neto Graham (TTM):</strong>
+              <span>{{ datosValorIntrinseco?.grahamNetTtm || '—' }} {{moneda | simboloMoneda}}</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item">
+              <strong>DCF (Flujo de Caja Descontado):</strong>
+              <span>{{ datosValorIntrinseco?.dcf || '—' }} {{moneda | simboloMoneda}}</span>
+            </div>
+            <div class="dato-item">
+              <strong>Precio objetivo analistas:</strong>
+              <span>{{ datosValorIntrinseco?.precioAnalistas || '—' }} {{moneda | simboloMoneda}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
