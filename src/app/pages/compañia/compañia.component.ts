@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { TradingviewChartComponent } from '../../shared/components/tradingview-chart/tradingview-chart.component';
 import { ActivatedRoute } from '@angular/router';
 import { InformacionCompañiaService } from '../../shared/services/recogerInformacion/informacion-compañia.service';
@@ -32,7 +32,7 @@ import { DatosValorIntrinsecoComponent } from '../../shared/components/datosValo
 @Component({
   selector: 'app-compañia',
   standalone: true,
-  imports: [CommonModule, TradingviewChartComponent,DatosValorIntrinsecoComponent, DatosRatiosValoracionYRentabilidadComponent, DatosPosicionFinancieraComponent, DatosMargenesYGastosVentasComponent, DatosEficienciaVentasYActivosComponent, DatosDistribucionAccionesCotizacionComponent, Datos_compañiaComponent, DatosYPreciosGeneralesComponent, DatosDividendosComponent, Datos_analistas_scoreComponent, Datos_crecimiento_accionesComponent],
+  imports: [CommonModule, TradingviewChartComponent, DatosValorIntrinsecoComponent, DatosRatiosValoracionYRentabilidadComponent, DatosPosicionFinancieraComponent, DatosMargenesYGastosVentasComponent, DatosEficienciaVentasYActivosComponent, DatosDistribucionAccionesCotizacionComponent, Datos_compañiaComponent, DatosYPreciosGeneralesComponent, DatosDividendosComponent, Datos_analistas_scoreComponent, Datos_crecimiento_accionesComponent],
   templateUrl: './compañia.component.html',
   styleUrls: ['./compañia.component.scss']
 })
@@ -67,6 +67,7 @@ export class CompañiaComponent implements OnInit {
   monedaActual: string | null = null;
   desplegar: boolean = true;
   favoritoGlobal: boolean = false;
+
 
 
 
@@ -180,32 +181,30 @@ export class CompañiaComponent implements OnInit {
       });
       //12. Recoger ratios de valoracion
       this.informacionCompañia.recogerRatiosDeValoracion(this.company_symbol).subscribe({
-        next:(data)=>{
+        next: (data) => {
           this.datosRatiosValoracion = data;
         },
-        error:(err)=>{
-          console.error('Error al cargar los ratios de valoracion',err)
+        error: (err) => {
+          console.error('Error al cargar los ratios de valoracion', err)
         }
       })
       //13. Recoger ratios de rentabilidad
       this.informacionCompañia.recogerRatiosDeRentabilidad(this.company_symbol).subscribe({
-        next:(data)=>{
-          this.datosRatiosRentabilidad=data;
+        next: (data) => {
+          this.datosRatiosRentabilidad = data;
         },
-        error:(err)=>{
-          console.error('Error al cargar los ratios de rentabilidad',err);
+        error: (err) => {
+          console.error('Error al cargar los ratios de rentabilidad', err);
         }
       })
       //14. Recoger valor intrinseco  
       this.informacionCompañia.recogerValorIntrinseco(this.company_symbol).subscribe({
-        next:(data)=>
-          {
-            this.datosValorIntrinseco = data; 
-          },
-        error:(err)=>
-          {
-            console.error('Error al cargar el valor intrinseco', err)
-          }
+        next: (data) => {
+          this.datosValorIntrinseco = data;
+        },
+        error: (err) => {
+          console.error('Error al cargar el valor intrinseco', err)
+        }
       })
       //Final if
     }
@@ -214,6 +213,21 @@ export class CompañiaComponent implements OnInit {
   }
 
 
+  mostrarScrollTop = false;
+
+  // Escucha el scroll del usuario
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    this.mostrarScrollTop = scrollY > 200; // muestra el botón si se baja más de 200px
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
   onMonedaSeleccionada(moneda: string) {
     this.monedaActual = moneda;

@@ -3,10 +3,11 @@ import { datosCompania } from '../../modells/bd/datosCompañia';
 import { FechaEspañolaPipe } from '../../pipes/fecha-española.pipe';
 import { CommonModule } from '@angular/common';
 import { NumberPuntoPipe } from '../../pipes/numberPunto.pipe';
+import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-datos_compania',
   standalone: true,
-  imports: [CommonModule, FechaEspañolaPipe, NumberPuntoPipe],
+  imports: [CommonModule, FechaEspañolaPipe, NumberPuntoPipe, RouterLink],
   templateUrl: './datos_compañia.component.html',
   styleUrls: ['./datos_compañia.component.scss']
 })

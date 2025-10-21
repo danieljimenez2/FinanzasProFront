@@ -1,0 +1,53 @@
+h4{color:white;}
+#link{text-decoration: underline; }
+#link:hover{cursor:pointer}
+.table-fixed {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  
+  th, td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.5rem;
+    height: 46px; /* altura fija */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  thead th {
+    background-color: #4a4a4a;
+    color: #f1f1f1;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #e0e0e0;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #f5f5f5;
+  }
+
+  tbody tr:hover {
+    background-color: #c0c0c0;
+  }
+
+  /* Anchura de columnas */
+  th:nth-child(1), td:nth-child(1) { width: 45px; }     /* # */
+  th:nth-child(2), td:nth-child(2) { width: 100px; }    /* Symbol */
+  th:nth-child(3), td:nth-child(3) { width: 200px; }    /* Nombre */
+  th:nth-child(5), td:nth-child(5) { width: 150px; }    /* Situación Caja */
+
+  th:nth-child(n+4):nth-child(-n+14),
+  td:nth-child(n+4):nth-child(-n+13) {
+    width: 100px;  /* Resto de columnas */
+  }
+}
+
+.page-indicator {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+}

@@ -43,4 +43,14 @@
   <app-datosRatiosValoracionYRentabilidad [ratiosRentabilidad]="datosRatiosRentabilidad" [ratiosValoracion]="datosRatiosValoracion"[desplegado]="desplegar"[moneda]="monedaActual"></app-datosRatiosValoracionYRentabilidad>
   <br>
   <app-datosValorIntrinseco [datosValorIntrinseco]="datosValorIntrinseco" [desplegado]="desplegar" [moneda]="monedaActual"></app-datosValorIntrinseco>
+
+
+  <button
+  class="btn btn-primary btn-scroll-top"
+  title="Volver arriba"
+  (click)="scrollToTop()"
+  [class.show]="mostrarScrollTop"
+>
+  <i class="bi bi-chevron-up"></i>
+</button>
 </div>

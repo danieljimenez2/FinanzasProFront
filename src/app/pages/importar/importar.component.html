@@ -3,7 +3,7 @@
     <div class="col-md-6 text-center">
 
       <!-- Título de formatos admitidos -->
-      <h5 class="text-white mb-3">Formatos admitidos: CSV y CSV UTF-8</h5>
+      <h5 class="text-white mb-3">Formatos admitidos: Excel (.xlsm)</h5>
 
       <!-- Dropzone -->
       <div class="dropzone p-5 rounded shadow-lg position-relative"
@@ -16,8 +16,8 @@
         <i *ngIf="!selectedFile" class="bi bi-file-earmark-arrow-up display-1 text-primary mb-3"></i>
         
         <!-- Mensaje de estado -->
-        <h4 *ngIf="!selectedFile" class="mb-2">Arrastra y suelta tu archivo CSV</h4>
-        <p *ngIf="!selectedFile" class="text-muted">o haz click para seleccionar un archivo CSV o CSV UTF-8</p>
+        <h4 *ngIf="!selectedFile" class="mb-2">Arrastra y suelta tu archivo Excel (.xlsm)</h4>
+        <p *ngIf="!selectedFile" class="text-muted">o haz click para seleccionar un archivo Excel (.xlsm)</p>
 
         <!-- Si archivo cargado -->
         <div *ngIf="selectedFile" class="file-info text-center">
@@ -30,7 +30,7 @@
         <p *ngIf="showError" class="text-danger mt-2">¡No se ha seleccionado ningún archivo!</p>
 
         <!-- Input real -->
-        <input type="file" accept=".csv" class="form-control-file" (change)="onFileSelected($event)">
+        <input type="file" accept=".xlsm" class="form-control-file" (change)="onFileSelected($event)">
       </div>
 
       <!-- Botón de subida -->
