@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { respuestaSector } from '../../shared/modells/respuestaSector-interface';
 import { SectorMercadoService } from '../../shared/services/recogerInformacion/sector-mercado.service';
 import { CommonModule } from '@angular/common';
+import { TablaListaEmpresasComponent } from '../../shared/components/tablaListaEmpresas/tablaListaEmpresas.component';
 
 @Component({
   selector: 'app-sector-mercado',
   standalone:true,
-  imports:[CommonModule, RouterLink],
+  imports:[CommonModule, RouterLink, TablaListaEmpresasComponent],
   templateUrl: './sector-mercado.component.html',
   styleUrls: ['./sector-mercado.component.scss']
 })

@@ -1,0 +1,43 @@
+<div class="container mt-3">
+  <h4 class="mb-3">Empresas del sector: {{ sectorName }}</h4>
+  
+  <table class="table table-fixed table-gray">
+    <thead>
+      <tr>
+        <th (click)="sortBy('indice')">#</th>
+        <th (click)="sortBy('companySymbol')">Symbol</th>
+        <th (click)="sortBy('companyName')">Nombre</th>
+        
+        <th title="Situación caja" (click)="sortBy('situacionCaja')">Situación Caja</th>
+        <th title="PER TTM" (click)="sortBy('perTtm')">PER TTM</th>
+        <th title="EV/FCF" (click)="sortBy('evFcf')">EV/FCF</th>
+        <th title="ROCE" (click)="sortBy('roce')">ROCE</th>
+        <th title="Ratio Deuda" (click)="sortBy('ratioDeuda')">Ratio Deuda</th>
+        <th title="Liquidez" (click)="sortBy('liquidez')">Liquidez</th>
+        <th title="Margen Bruto" (click)="sortBy('margenBruto')">Margen Bruto</th>
+        <th title="Margen Neto" (click)="sortBy('margenNeto')">Margen Neto</th>
+        <th title="Dividend Yield" (click)="sortBy('dividendYieldTtm')">Dividend Yield</th>
+        <th title="Payout Ratio" (click)="sortBy('PayoutRatioTtm')">Payout Ratio</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let empresa of empresas; let i = index">
+        <td>{{ i + 1 + (pagina * 10) }}</td>
+        <td id="link" [routerLink]="['/compañia', empresa.companySymbol]">{{ empresa.companySymbol }}</td>
+        <td>{{ empresa.companyName }}</td>
+        
+        <td [ngClass]="getColorSituacionCaja(empresa.situacionCaja)">{{ empresa.situacionCaja ?? '-' }}</td>
+        <td [ngClass]="getColorPER(empresa.perTtm)">{{ empresa.perTtm | number:'1.2-2' }}</td>
+        <td [ngClass]="getColorEVFCF(empresa.evFcf)">{{ empresa.evFcf | number:'1.2-2' }}</td>
+        <td [ngClass]="getColorROCE(empresa.roce)">{{ empresa.roce | percentFix}}</td>
+        <td [ngClass]="getColorRatioDeuda(empresa.ratioDeuda)">{{ empresa.ratioDeuda | number:'1.2-2' }}</td>
+        <td [ngClass]="getColorLiquidez(empresa.liquidez)">{{ empresa.liquidez | number:'1.2-2' }}</td>
+        <td [ngClass]="getColorMargenBruto(empresa.margenBruto)">{{ empresa.margenBruto | percentFix}}</td>
+        <td [ngClass]="getColorMargenNeto(empresa.margenNeto)">{{ empresa.margenNeto | percentFix }}</td>
+        <td [ngClass]="getColorDividendYield(empresa.dividendYieldTtm)">{{ empresa.dividendYieldTtm | percentFix }}</td>
+        <td [ngClass]="getColorPayoutRatio(empresa.PayoutRatioTtm)">{{ empresa.PayoutRatioTtm | percentFix }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

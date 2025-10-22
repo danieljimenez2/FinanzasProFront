@@ -1,43 +1,11 @@
 <div class="container mt-3">
-  <h4 class="mb-3">Empresas del sector: {{ sectorName }}</h4>
+  <app-tablaListaEmpresas
+    [empresas]="empresasSector"
+    [sectorName]="sectorName"
+    [pagina]="pagina">
+  </app-tablaListaEmpresas>
 
-  <table class="table table-fixed table-gray">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Symbol</th>
-        <th>Nombre</th>
-        <th>PER TTM</th>
-        <th >Situación Caja</th>
-        <th>EV/FCF</th>
-        <th>ROCE</th>
-        <th>Ratio Deuda</th>
-        <th>Liquidez</th>
-        <th>Margen Bruto</th>
-        <th>Margen Neto</th>
-        <th>Dividend Yield</th>
-        <th>Payout Ratio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let empresa of empresasSector; let i = index">
-        <td routerLink="">{{ i + 1 + (pagina * 10) }}</td>
-        <td id="link" [routerLink]="['/compañia', empresa.companySymbol]" >{{ empresa.companySymbol }}</td>
-        <td>{{ empresa.companyName }}</td>
-        <td>{{ empresa.perTtm | number:'1.2-2' }}</td>
-        <td>{{ empresa.situacionCaja ?? '-' }}</td>
-        <td>{{ empresa.evFcf | number:'1.2-2' }}</td>
-        <td>{{ empresa.roce | number:'1.2-2' }}</td>
-        <td>{{ empresa.ratioDeuda | number:'1.2-2' }}</td>
-        <td>{{ empresa.liquidez | number:'1.2-2' }}</td>
-        <td>{{ empresa.margenBruto | number:'1.2-2' }}</td>
-        <td>{{ empresa.margenNeto | number:'1.2-2' }}</td>
-        <td>{{ empresa.dividendYieldTtm | number:'1.2-2' }}</td>
-        <td>{{ empresa.PayoutRatioTtm | number:'1.2-2' }}</td>
-      </tr>
-    </tbody>
-  </table>
-
+  <!-- Paginador -->
   <div class="d-flex justify-content-center align-items-center mt-2">
     <button class="btn btn-secondary me-2" (click)="paginaAnterior()" [disabled]="pagina === 0">Anterior</button>
     <span class="mx-2 page-indicator">Página {{ pagina + 1 }}</span>

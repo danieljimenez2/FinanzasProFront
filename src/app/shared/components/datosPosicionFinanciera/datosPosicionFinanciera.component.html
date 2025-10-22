@@ -23,59 +23,59 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Deuda / Equity:</strong>
-              <span>{{ datosPosicionFinanciera?.deudaEquity || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.deudaEquity || '—' | number:'1.2-4' }}</span>
             </div>
 
             <div class="dato-item">
               <strong>Deuda / Activos:</strong>
-              <span>{{ datosPosicionFinanciera?.deudaActivos || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.deudaActivos || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Deuda Neta / EBITDA:</strong>
-              <span>{{ datosPosicionFinanciera?.deudaNetaEbitda || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.deudaNetaEbitda || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Ratio de Deuda:</strong>
-              <span>{{ datosPosicionFinanciera?.ratioDeuda || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.ratioDeuda || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Deuda L/P / Capitalización:</strong>
-              <span>{{ datosPosicionFinanciera?.deudaLongtermCapitalizacion || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.deudaLongtermCapitalizacion || '—' | percentFix:2}}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Liquidez Corriente:</strong>
-              <span>{{ datosPosicionFinanciera?.liquidez || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.liquidez || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Quick Ratio (TTM):</strong>
-              <span>{{ datosPosicionFinanciera?.quickratioTtm || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.quickratioTtm || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Cobertura de Intereses:</strong>
-              <span>{{ datosPosicionFinanciera?.coberturaIntereses || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.coberturaIntereses || '—' | number:'1.2-4'}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Deuda / Capitalización:</strong>
-              <span>{{ datosPosicionFinanciera?.deudaCapitalizacion || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.deudaCapitalizacion || '—' | number:'1.2-4' | percentFix:2}} </span>
             </div>
 
             <div class="dato-item">
               <strong>Calidad del Beneficio Neto:</strong>
-              <span>{{ datosPosicionFinanciera?.calidadBeneficioNeto || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.calidadBeneficioNeto || '—'  | percentFix:2}}</span>
             </div>
 
             <div class="dato-item">
               <strong>Multiplicador del Equity:</strong>
-              <span>{{ datosPosicionFinanciera?.companyEquityMultiplier || '—' }}</span>
+              <span>{{ datosPosicionFinanciera?.companyEquityMultiplier || '—' | number:'1.2-4'}}</span>
             </div>
           </div>
         </div>
