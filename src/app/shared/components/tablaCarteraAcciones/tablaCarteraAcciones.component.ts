@@ -1,17 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { respuestaSector } from '../../modells/respuestaSector-interface';
+import { CommonModule } from '@angular/common';
 import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-tablaListaEmpresas',
-  standalone: true,
-  imports: [CommonModule, RouterLink, PercentFixPipe],
-  templateUrl: './tablaListaEmpresas.component.html',
-  styleUrls: ['./tablaListaEmpresas.component.scss']
+  selector: 'app-tablaCarteraAcciones',
+  standalone:true,
+  imports:[CommonModule,PercentFixPipe,RouterLink],
+  templateUrl: './tablaCarteraAcciones.component.html',
+  styleUrls: ['./tablaCarteraAcciones.component.scss']
 })
-export class TablaListaEmpresasComponent implements OnInit {
+export class TablaCarteraAccionesComponent implements OnInit {
 
   @Input() empresas: respuestaSector[] = [];
   @Input() sectorName: string | null = null;
@@ -71,7 +71,6 @@ export class TablaListaEmpresasComponent implements OnInit {
     if (value == null || value === 0) return 'gris';
     if (value < 0) return 'rojo';
     if (value > 0 && value <= 40) return 'amarillo';
-    if(value > 40) return 'verde';
     return 'verde';
   }
 
@@ -117,4 +116,5 @@ export class TablaListaEmpresasComponent implements OnInit {
       return 0;
     });
   }
+
 }

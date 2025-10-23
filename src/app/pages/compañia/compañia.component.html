@@ -2,7 +2,7 @@
 <app-tradingview-chart [companySymbol]="company_symbol"></app-tradingview-chart>
 <div class="container my-2">
 
-  <app-datos_compania [datosCompania]="this.datosCompania" [fechaIpo]="fechaIpo"
+  <app-datos_compania [companySymbol]="company_symbol" [datosCompania]="this.datosCompania" [fechaIpo]="fechaIpo"
     (monedaEmitida)="onMonedaSeleccionada($event)" (mostrarInfoCambio)="onMostrarInfoCambiado($event)"
     (favoritoCambio)="onFavoritoCambiado($event)">
   </app-datos_compania>
