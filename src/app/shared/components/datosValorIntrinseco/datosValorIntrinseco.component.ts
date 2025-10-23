@@ -2,10 +2,11 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { valorIntrinseco } from '../../modells/bd/valorIntrinseco';
 import { CommonModule } from '@angular/common';
 import { SimboloMonedaPipe } from '../../pipes/simbolo-moneda.pipe';
+import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
 
 @Component({
   standalone:true,
-  imports:[CommonModule, SimboloMonedaPipe],
+  imports:[CommonModule, SimboloMonedaPipe, PercentFixPipe],
   selector: 'app-datosValorIntrinseco',
   templateUrl: './datosValorIntrinseco.component.html',
   styleUrls: ['./datosValorIntrinseco.component.scss']

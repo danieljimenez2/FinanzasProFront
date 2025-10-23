@@ -24,7 +24,7 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Dividend Yield TTM:</strong>
-              <span>{{datosDividendos?.dividendYieldTtm || '—'}}</span>
+              <span>{{datosDividendos?.dividendYieldTtm || '—' | percentFix}}</span>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Payout Ratio TTM:</strong>
-              <span> {{datosDividendos?.PayoutRatioTtm || '—'}} </span>
+              <span> {{datosDividendos?.PayoutRatioTtm || '—' | percentFix}} </span>
             </div>
         </div>
       </div>

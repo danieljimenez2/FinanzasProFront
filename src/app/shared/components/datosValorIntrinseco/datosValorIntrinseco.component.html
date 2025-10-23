@@ -27,18 +27,18 @@
             </div>
             <div class="dato-item">
               <strong>Número de Graham (TTM):</strong>
-              <span>{{ datosValorIntrinseco?.grahamNumberTtm || '—' }} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.grahamNumberTtm || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
             <div class="dato-item">
               <strong>Valor Neto Graham (TTM):</strong>
-              <span>{{ datosValorIntrinseco?.grahamNetTtm || '—' }} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.grahamNetTtm || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>DCF (Flujo de Caja Descontado):</strong>
-              <span>{{ datosValorIntrinseco?.dcf || '—' }} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.dcf || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
             <div class="dato-item">
               <strong>Precio objetivo analistas:</strong>

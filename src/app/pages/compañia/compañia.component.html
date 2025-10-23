@@ -6,7 +6,11 @@
     (monedaEmitida)="onMonedaSeleccionada($event)" (mostrarInfoCambio)="onMostrarInfoCambiado($event)"
     (favoritoCambio)="onFavoritoCambiado($event)">
   </app-datos_compania>
-
+  
+  <br>
+  <app-DatosYPreciosGenerales [precioYDatosGenerales]="datosYPrecioGenerales" [desplegado]="desplegar"
+    [moneda]="monedaActual">
+  </app-DatosYPreciosGenerales>
   <br>
 
   <app-datos_analistas_score *ngIf="datosScore" [datosScore]="this.datosScore"
@@ -16,12 +20,7 @@
   <app-datos_crecimiento_acciones *ngIf="datosCrecimiento" [datosCrecimiento]="datosCrecimiento"
     [datosPorAccion]="datosAcciones" [desplegado]="desplegar" [moneda]="monedaActual"></app-datos_crecimiento_acciones>
 
-  <br>
 
-  <app-DatosYPreciosGenerales [precioYDatosGenerales]="datosYPrecioGenerales" [desplegado]="desplegar"
-    [moneda]="monedaActual">
-
-  </app-DatosYPreciosGenerales>
   <br>
 
   <app-datosDividendos [datosDividendos]="datosDividendos" [desplegado]="desplegar" [moneda]="monedaActual">

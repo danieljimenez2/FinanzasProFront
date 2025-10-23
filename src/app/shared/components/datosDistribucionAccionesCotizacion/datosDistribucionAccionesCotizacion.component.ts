@@ -1,10 +1,11 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { distribucionAccionesYCotizacion } from '../../modells/bd/distribucionAccionesYCotizacion';
 import { CommonModule } from '@angular/common';
+import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
 
 @Component({
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule,PercentFixPipe],
   selector: 'app-datosDistribucionAccionesCotizacion',
   templateUrl: './datosDistribucionAccionesCotizacion.component.html',
   styleUrls: ['./datosDistribucionAccionesCotizacion.component.scss']

@@ -19,53 +19,38 @@
       aria-labelledby="headingPrecioDatosGenerales">
 
       <div class="accordion-body">
+        
+        <!-- Primera fila -->
         <div class="row datos-generales">
-
-          <!-- Columna Izquierda -->
           <div class="col-md-6">
-            <div class="dato-item">
-              <strong>Precio actual:</strong>
-              <span>{{ precioYDatosGenerales?.precio | number:'1.2-2'}} {{ moneda | simboloMoneda}} </span>
-            </div>
-            <div class="dato-item">
-              <strong>Market Cap:</strong>
-              <span>{{ precioYDatosGenerales?.marketCap | abreviarNumero}} {{ moneda | simboloMoneda}}</span>
-            </div>
-            <div class="dato-item">
-              <strong>Tamaño de mercado:</strong>
-              <span>{{ precioYDatosGenerales?.tamanoMercado || '—' }}</span>
-            </div>
-            <div class="dato-item">
-              <strong>Situación de caja:</strong>
-              <span>{{ precioYDatosGenerales?.situacionCaja || '—' }}</span>
-            </div>
+            <div class="dato-item"><strong>Precio actual:</strong> <span>{{ precioYDatosGenerales?.precio | number:'1.2-2'}} {{ moneda | simboloMoneda}}</span></div>
+            <div class="dato-item"><strong>Market Cap:</strong> <span>{{ precioYDatosGenerales?.marketCap | abreviarNumero}} {{ moneda | simboloMoneda}}</span></div>
+            <div class="dato-item"><strong>Tamaño de mercado:</strong> <span>{{ precioYDatosGenerales?.tamanoMercado || '—' }}</span></div>
+            <div class="dato-item"><strong>Situación de caja:</strong> <span>{{ precioYDatosGenerales?.situacionCaja || '—' }}</span></div>
           </div>
 
-          <!-- Columna Derecha -->
           <div class="col-md-6">
-            <div class="dato-item">
-              <strong>Valor de empresa:</strong>
-              <span>{{ precioYDatosGenerales?.valorEmpresa | abreviarNumero}} {{ moneda | simboloMoneda}} </span>
-            </div>
-            <div class="dato-item">
-              <strong>Último dividendo:</strong>
-              <span>{{ precioYDatosGenerales.ultimoDividendo || '—' }} {{moneda | simboloMoneda}} </span>
-            </div>
-            <div class="dato-item">
-              <strong>Beta:</strong>
-              <span>{{ precioYDatosGenerales?.beta || '—' }}</span>
-            </div>
-            <div class="dato-item">
-              <strong>PER TTM:</strong>
-              <span>{{ precioYDatosGenerales?.perTtm || '—' }}</span>
-            </div>
-            <div class="dato-item">
-              <strong>Relación min/máx 52s:</strong>
-              <span>{{ precioYDatosGenerales?.min52sMax52s || '—' }}</span>
-            </div>
+            <div class="dato-item"><strong>Valor de empresa:</strong> <span>{{ precioYDatosGenerales?.valorEmpresa | abreviarNumero}} {{ moneda | simboloMoneda}}</span></div>
+            <div class="dato-item"><strong>Último dividendo:</strong> <span>{{ precioYDatosGenerales?.ultimoDividendo || '—' }} {{ moneda | simboloMoneda}}</span></div>
+            <div class="dato-item"><strong>Beta:</strong> <span>{{ precioYDatosGenerales?.beta || '—' }}</span></div>
+            <div class="dato-item"><strong>PER TTM:</strong> <span>{{ precioYDatosGenerales?.perTtm || '—' | number:'1.2-2'}}</span></div>
           </div>
-
         </div>
+
+        <hr class="border-secondary my-3">
+
+        <!-- Segunda fila alineada -->
+        <div class="row datos-generales">
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Min 52s:</strong> <span>{{ precioYDatosGenerales?.minimo52s || '—' | number:'1.2-2'}}</span></div>
+            <div class="dato-item"><strong>Relación min/máx 52s:</strong> <span>{{ precioYDatosGenerales?.min52sMax52s || '—' | number:'1.2-2'}}</span></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="dato-item"><strong>Máx 52s:</strong> <span>{{ precioYDatosGenerales?.maximo52s || '—' | number:'1.2-2'}}</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

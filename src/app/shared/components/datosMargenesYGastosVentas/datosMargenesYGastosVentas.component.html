@@ -27,26 +27,26 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Margen Bruto:</strong>
-              <span>{{ datosMargenesVentas?.margenBruto || '—' }}%</span>
+              <span>{{ datosMargenesVentas?.margenBruto || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>Margen Operativo:</strong>
-              <span>{{ datosMargenesVentas?.margenOperativo || '—' }}%</span>
+              <span>{{ datosMargenesVentas?.margenOperativo || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>Margen EBT:</strong>
-              <span>{{ datosMargenesVentas?.margenEBT || '—' }}%</span>
+              <span>{{ datosMargenesVentas?.margenEBT || '—' | percentFix}}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Margen Neto:</strong>
-              <span>{{ datosMargenesVentas?.margenNeto || '—' }}%</span>
+              <span>{{ datosMargenesVentas?.margenNeto || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>Tasa de Impuesto:</strong>
-              <span>{{ datosMargenesVentas?.tasaImpuesto || '—' }}%</span>
+              <span>{{ datosMargenesVentas?.tasaImpuesto || '—' | percentFix}}</span>
             </div>
           </div>
         </div>
@@ -59,30 +59,30 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>SVG / Ingresos (TTM):</strong>
-              <span>{{ datosGastosVentas?.svgToRevenueTtm || '—' }}%</span>
+              <span>{{ datosGastosVentas?.svgToRevenueTtm || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>I+D / Ingresos (TTM):</strong>
-              <span>{{ datosGastosVentas?.iMasdToRevenueTtm || '—' }}%</span>
+              <span>{{ datosGastosVentas?.iMasdToRevenueTtm || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>Capex / CFO (TTM):</strong>
-              <span>{{ datosGastosVentas?.capexToCfoTtm || '—' }}%</span>
+              <span>{{ datosGastosVentas?.capexToCfoTtm || '—' | percentFix}}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Capex / Ingresos (TTM):</strong>
-              <span>{{ datosGastosVentas?.capexToRevenueTtm || '—' }}%</span>
+              <span>{{ datosGastosVentas?.capexToRevenueTtm || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>SBC / Ingresos (TTM):</strong>
-              <span>{{ datosGastosVentas?.sbcToRevenueTtm || '—' }}%</span>
+              <span>{{ datosGastosVentas?.sbcToRevenueTtm || '—' | percentFix}}</span>
             </div>
             <div class="dato-item">
               <strong>Ingresos Totales:</strong>
-              <span>{{ datosGastosVentas?.revenues | numberPunto}} {{ moneda | simboloMoneda}}</span>
+              <span>{{ datosGastosVentas?.revenues | abreviarNumero}} {{ moneda | simboloMoneda}}</span>
             </div>
           </div>
         </div>

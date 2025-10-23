@@ -4,10 +4,12 @@ import { gastosSobreVentas } from '../../modells/bd/gastosSobreVentas';
 import { SimboloMonedaPipe } from '../../pipes/simbolo-moneda.pipe';
 import { CommonModule } from '@angular/common';
 import { NumberPuntoPipe } from '../../pipes/numberPunto.pipe';
+import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
+import { AbreviarNumeroPipe } from '../../pipes/abreviarNumero.pipe';
 
 @Component({
   standalone: true,
-  imports: [SimboloMonedaPipe,CommonModule, NumberPuntoPipe],
+  imports: [SimboloMonedaPipe,CommonModule, NumberPuntoPipe, PercentFixPipe,AbreviarNumeroPipe],
   selector: 'app-datosMargenesYGastosVentas',
   templateUrl: './datosMargenesYGastosVentas.component.html',
   styleUrls: ['./datosMargenesYGastosVentas.component.scss']

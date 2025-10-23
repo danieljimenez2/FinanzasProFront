@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { crecimientosPorAccion } from '../../modells/bd/crecimientosPorAccion';
 import { datosPorAccion } from '../../modells/bd/datosPorAccion';
 import { SimboloMonedaPipe } from '../../pipes/simbolo-moneda.pipe';
+import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
 
 @Component({
   selector: 'app-datos_crecimiento_acciones',
   standalone: true,
-  imports: [CommonModule, SimboloMonedaPipe],
+  imports: [CommonModule, SimboloMonedaPipe, PercentFixPipe],
   templateUrl: './datos_crecimiento_acciones.component.html',
   styleUrls: ['./datos_crecimiento_acciones.component.scss']
 })

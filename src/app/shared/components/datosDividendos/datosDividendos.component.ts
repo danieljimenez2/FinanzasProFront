@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { dividendos } from '../../modells/bd/dividendos';
+import { PercentFixPipe } from '../../pipes/porcentajeOrdenado';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PercentFixPipe],
   selector: 'app-datosDividendos',
   templateUrl: './datosDividendos.component.html',
   styleUrls: ['./datosDividendos.component.scss']
