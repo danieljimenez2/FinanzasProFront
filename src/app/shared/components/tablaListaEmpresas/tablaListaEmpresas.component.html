@@ -1,12 +1,12 @@
-<div class="container mt-3">
-  <h4 class="mb-3">Empresas del sector: {{ sectorName }}</h4>
+<br>
+  <h4 class="mb-3">Empresas de: {{ sectorName }}</h4>
   
   <table class="table table-fixed table-gray">
     <thead>
       <tr>
-        <th (click)="sortBy('indice')">#</th>
-        <th (click)="sortBy('companySymbol')">Symbol</th>
-        <th (click)="sortBy('companyName')">Nombre</th>
+        <th title="indice" (click)="sortBy('indice')">#</th>
+        <th title="Symbol" (click)="sortBy('companySymbol')">Symbol</th>
+        <th title="Nombre" (click)="sortBy('companyName')">Nombre</th>
         
         <th title="Situación caja" (click)="sortBy('situacionCaja')">Situación Caja</th>
         <th title="PER TTM" (click)="sortBy('perTtm')">PER TTM</th>
@@ -40,4 +40,3 @@
       </tr>
     </tbody>
   </table>
-</div>

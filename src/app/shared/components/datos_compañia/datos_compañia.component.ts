@@ -46,7 +46,7 @@ export class Datos_compañiaComponent implements OnInit, OnChanges {
 
     this.esFavorito = !this.esFavorito;
     this.favoritoCambio.emit(this.esFavorito);
-
+    console.log(`voy a enviar este company Symbol`, this.companySymbol);
     if (this.esFavorito) {
       // Añadir a favoritos
       this.listaCarteraService.anadirAFavoritos(this.companySymbol).subscribe({

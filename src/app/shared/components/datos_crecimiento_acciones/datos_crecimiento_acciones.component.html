@@ -47,22 +47,22 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Caja por acción:</strong>
-              <span>{{ datosPorAccion?.cajaPorAccion || '—' | number:'1.2-2' }} {{ moneda | simboloMoneda }}</span>
+              <span>{{ datosPorAccion?.cajaPorAccion | number:'1.2-2' }} {{ moneda | simboloMoneda }}</span>
             </div>
             <div class="dato-item">
-              <strong>Valor en libros: NIGGER</strong>
-              <span>{{ datosPorAccion?.valorEnLibrosPorAccion || '—' | number:'1.2-2'}} {{ moneda | simboloMoneda }}</span>
+              <strong>Valor en libros: </strong>
+              <span>{{ datosPorAccion?.valorEnLibrosPorAccion | number:'1.2-2'}} {{ moneda | simboloMoneda }}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>EPS TTM:</strong>
-              <span>{{ datosPorAccion?.epsTtm || '—' | number:'1.2-2'}} {{ moneda | simboloMoneda }}</span>
+              <span>{{ datosPorAccion?.epsTtm | number:'1.2-2'}} {{ moneda | simboloMoneda }}</span>
             </div>
             <div class="dato-item">
               <strong>FCF por acción:</strong>
-              <span>{{ datosPorAccion?.fcfPorAccion || '—' | number:'1.2-2' }} {{ moneda | simboloMoneda }}</span>
+              <span>{{ datosPorAccion?.fcfPorAccion | number:'1.2-2' }} {{ moneda | simboloMoneda }}</span>
             </div>
           </div>
         </div>

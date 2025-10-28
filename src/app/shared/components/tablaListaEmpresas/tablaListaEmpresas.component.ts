@@ -20,7 +20,7 @@ export class TablaListaEmpresasComponent implements OnInit {
   // Orden
   sortColumn: string | null = null;
   sortAsc: boolean = true;
-
+  
   ngOnInit() {}
 
   // === MÉTODOS DE COLOR SEGÚN RANGO ===

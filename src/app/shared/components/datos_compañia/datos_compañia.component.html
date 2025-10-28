@@ -29,13 +29,13 @@
       <div class="col-md-6">
         <div class="dato-item"><strong>ISIN:</strong><span>{{ datosCompania?.isin }}</span></div>
         <div class="dato-item"><strong>Moneda:</strong><span>{{ datosCompania?.moneda }}</span></div>
-        <div class="dato-item"><strong>Bolsa:</strong><span>{{ datosCompania?.bolsa }}</span></div>
+        <div class="dato-item"><strong>Bolsa:</strong><span id="link"[routerLink]="['/bolsa', datosCompania.bolsa]">{{ datosCompania?.bolsa }}</span></div>
         <div class="dato-item"><strong>Sector:</strong><span id="link" [routerLink]="['/sector', datosCompania.sector]"> {{ datosCompania?.sector }}</span></div>
         <div class="dato-item"><strong>Industria:</strong><span>{{ datosCompania?.industria }}</span></div>
       </div>
       <!-- Columna 2 -->
       <div class="col-md-6">
-        <div class="dato-item"><strong>País:</strong><span>{{ datosCompania?.pais }}</span></div>
+        <div class="dato-item"><strong>País:</strong><span id="link" [routerLink]="['/pais', datosCompania.pais]">{{ datosCompania?.pais }}</span></div>
         <div class="dato-item"><strong>Empleados:</strong><span>{{ datosCompania?.empleados | numberPunto}}</span></div>
         <div class="dato-item"><strong>CEO:</strong><span>{{ datosCompania?.ceo }}</span></div>
         <div class="dato-item">

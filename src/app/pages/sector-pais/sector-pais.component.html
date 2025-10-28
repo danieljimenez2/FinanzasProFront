@@ -1,0 +1,14 @@
+<div class="container mt-3">
+  <app-tablaListaEmpresas
+    [empresas]="empresasSector"
+    [sectorName]="pais"
+    [pagina]="pagina">
+  </app-tablaListaEmpresas>
+
+  <!-- Paginador -->
+  <div class="d-flex justify-content-center align-items-center mt-2">
+    <button class="btn btn-secondary me-2" (click)="paginaAnterior()" [disabled]="pagina === 0">Anterior</button>
+    <span class="mx-2 page-indicator">Página {{ pagina + 1 }}</span>
+    <button class="btn btn-primary ms-2" (click)="siguientePagina()">Siguiente</button>
+  </div>
+</div>

@@ -10,10 +10,18 @@ import { environment } from '../../../../environments/environments';
 })
 export class SectorMercadoService {
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   recogerEmpresasPorSector(sector: string, pagina: number = 0): Observable<respuestaSector[]> {
     const headers = new HttpHeaders({ sector, page: pagina.toString() });
     return this.http.get<respuestaSector[]>(`${environment.BaseApiUrl}sector/individual`, { headers });
+  }
+  recogerEmpresasPorPais(pais: string, pagina: number = 0): Observable<respuestaSector[]> {
+    const headers = new HttpHeaders({ pais, page: pagina.toString() });
+    return this.http.get<respuestaSector[]>(`${environment.BaseApiUrl}sector/pais`, { headers });
+  }
+  recogerEmpresasPorBolsa(bolsa: string, pagina: number = 0): Observable<respuestaSector[]> {
+    const headers = new HttpHeaders({ bolsa, page: pagina.toString() });
+    return this.http.get<respuestaSector[]>(`${environment.BaseApiUrl}sector/bolsa`, { headers });
   }
 }

@@ -12,4 +12,5 @@ export interface respuestaSector {
     margenNeto: number;
     dividendYieldTtm: number;
     PayoutRatioTtm: number;
+    payoutRatioTtm:number;
 }

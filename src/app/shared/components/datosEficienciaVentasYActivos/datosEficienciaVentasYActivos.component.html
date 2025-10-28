@@ -21,13 +21,13 @@
       <div class="accordion-body">
         <div class="row datos-generales">
           <div class="col-md-6">
-            <div class="dato-item"><strong>Days Of Inventory Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfInventoryOutstandingTtm || '—' | number:'1.2-2'}} </span></div>
-            <div class="dato-item"><strong>Days Of Sales Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfSalesOutstandingTtm || '—' | number:'1.2-2'}}  </span></div>
+            <div class="dato-item"><strong>Days Of Inventory Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfInventoryOutstandingTtm | number:'1.2-2'}} </span></div>
+            <div class="dato-item"><strong>Days Of Sales Outstanding Ttm:</strong> <span>{{datosEficienciaVentas?.daysOfSalesOutstandingTtm | number:'1.2-2'}}  </span></div>
           </div>
 
           <div class="col-md-6">
-            <div class="dato-item"><strong>Rotación activos</strong> <span>{{datosEficienciaVentas?.rotacionActivos || '—' | number:'1.2-2'}} </span></div>
-            <div class="dato-item"><strong>rotacion activos fijos:</strong> <span>{{datosEficienciaVentas?.rotacionActivosFijos || '—' | number:'1.2-2'}} </span></div>
+            <div class="dato-item"><strong>Rotación activos</strong> <span>{{datosEficienciaVentas?.rotacionActivos  | number:'1.2-2'}} </span></div>
+            <div class="dato-item"><strong>rotacion activos fijos:</strong> <span>{{datosEficienciaVentas?.rotacionActivosFijos | number:'1.2-2'}} </span></div>
           </div>
         </div>
 
@@ -37,12 +37,12 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Rotación cuentas por cobrar:</strong>
-              <span>{{datosEficienciaVentas?.rotacionCuentasPorCobrar || '—' | number:'1.2-2'}} </span>
+              <span>{{datosEficienciaVentas?.rotacionCuentasPorCobrar | number:'1.2-2'}} </span>
             </div>
             
             <div class="dato-item">
               <strong>Rotación Inventarios:</strong>
-              <span>{{datosEficienciaVentas?.rotacionInventarios || '—' | number:'1.2-2'}} </span>
+              <span>{{datosEficienciaVentas?.rotacionInventarios | number:'1.2-2'}} </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -50,11 +50,11 @@
               <strong>
                 Rotación proveedores:
               </strong>
-              <span>{{datosEficienciaVentas?.rotacionProveedores || '—' | number:'1.2-2'}}</span>
+              <span>{{datosEficienciaVentas?.rotacionProveedores | number:'1.2-2'}}</span>
             </div>
             <div class="dato-item">
               <strong>Ciclo operativo:</strong>
-              <span>{{datosEficienciaVentas?.cicloOperativo || '—' | number:'1.2-2'}}</span>
+              <span>{{datosEficienciaVentas?.cicloOperativo | number:'1.2-2'}}</span>
             </div>
           </div>
         </div>

@@ -23,26 +23,26 @@
           <div class="col-md-6">
             <div class="dato-item">
               <strong>Cotización actual:</strong>
-              <span>{{ datosValorIntrinseco?.cotizacion || '—' }} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.cotizacion }} {{moneda | simboloMoneda}}</span>
             </div>
             <div class="dato-item">
               <strong>Número de Graham (TTM):</strong>
-              <span>{{ datosValorIntrinseco?.grahamNumberTtm || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.grahamNumberTtm | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
             <div class="dato-item">
               <strong>Valor Neto Graham (TTM):</strong>
-              <span>{{ datosValorIntrinseco?.grahamNetTtm || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.grahamNetTtm | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="dato-item">
               <strong>DCF (Flujo de Caja Descontado):</strong>
-              <span>{{ datosValorIntrinseco?.dcf || '—' | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.dcf | number:'1.2-2'}} {{moneda | simboloMoneda}}</span>
             </div>
             <div class="dato-item">
               <strong>Precio objetivo analistas:</strong>
-              <span>{{ datosValorIntrinseco?.precioAnalistas || '—' }} {{moneda | simboloMoneda}}</span>
+              <span>{{ datosValorIntrinseco?.precioAnalistas }} {{moneda | simboloMoneda}}</span>
             </div>
           </div>
         </div>

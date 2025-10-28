@@ -12,9 +12,9 @@ export class CarteraInversionService {
   constructor(private http: HttpClient) { }
 
   // Obtener lista de favoritos
-  recogerListaCartera(): Observable<respuestaSector[]> {
-    return this.http.get<respuestaSector[]>(`${environment.BaseApiUrl}cartera/lista`);
-  }
+ recogerListaCartera(pagina: number) {
+  return this.http.get<respuestaSector[]>(`${environment.BaseApiUrl}cartera/lista?pagina=${pagina}`);
+}
 
   // Añadir a favoritos
   anadirAFavoritos(companySymbol: string): Observable<any> {

@@ -6,22 +6,38 @@ import { respuestaSector } from '../../shared/modells/respuestaSector-interface'
 import { TablaCarteraAccionesComponent } from '../../shared/components/tablaCarteraAcciones/tablaCarteraAcciones.component';
 @Component({
   selector: 'app-cartera',
-  standalone:true,
-  imports:[CommonModule, TablaCarteraAccionesComponent],
+  standalone: true,
+  imports: [CommonModule, TablaCarteraAccionesComponent],
   templateUrl: './cartera.component.html',
   styleUrls: ['./cartera.component.scss']
 })
 export class CarteraComponent implements OnInit {
 
-  constructor(private carteraService : CarteraInversionService) { }
+  constructor(private carteraService: CarteraInversionService) { }
 
-  listaCartera: respuestaSector [] = []
+  listaCartera: respuestaSector[] = []
+
+  pagina = 0;
 
   ngOnInit() {
-    this.carteraService.recogerListaCartera().subscribe({
-      next:(data)=>{this.listaCartera = data},
-      error:(err)=>{console.error('error al cargar la cartera de inversión',err)}
-    })
+    this.cargarCartera();
+  }
+
+  cargarCartera() {
+    this.carteraService.recogerListaCartera(this.pagina).subscribe({
+      next: (data) => (this.listaCartera = data),
+      error: (err) => console.error('Error al cargar cartera:', err),
+    });
+  }
+
+  siguientePagina() {
+    this.pagina++;
+    this.cargarCartera();
+  }
+
+  paginaAnterior() {
+    if (this.pagina > 0) this.pagina--;
+    this.cargarCartera();
   }
 
 }
