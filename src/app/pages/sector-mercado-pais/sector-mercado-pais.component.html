@@ -1,0 +1,53 @@
+<div class="container mt-4 p-4 rounded shadow-lg dark-container">
+
+  <h4 class="mb-4 text-left text-accent fw-semibold">
+    Buscar empresas por país y sector
+  </h4>
+
+  <!-- Fila de inputs + botón -->
+  <div class="row g-3 align-items-end">
+
+    <!-- País -->
+    <div class="col-md-5 position-relative">
+      <label for="pais" class="form-label">País</label>
+      <input type="search" id="pais" autocomplete="off" class="form-control dark-input" placeholder="Escribe un país..."
+        [(ngModel)]="paisSeleccionado" (input)="filtrarPaises()" list="lista-paises" /><span class="clear-btn"
+        *ngIf="paisSeleccionado" (click)="paisSeleccionado=''">&times;</span>
+      <datalist id="lista-paises">
+        <option *ngFor="let pais of paisesFiltrados" [value]="pais"></option>
+      </datalist>
+
+
+    </div>
+
+    <!-- Sector -->
+    <div class="col-md-5">
+      <label for="sector" class="form-label">Sector</label>
+      <select id="sector" class="form-select dark-input" [(ngModel)]="sectorSeleccionado">
+        <option value="" disabled selected>Selecciona un sector...</option>
+        <option *ngFor="let sector of sectoresFiltrados" [value]="sector">{{ sector }}</option>
+      </select>
+    </div>
+
+    <!-- Botón Buscar -->
+    <div class="col-md-2 d-flex justify-content-center">
+      <button class="btn btn-gradient w-100 fw-semibold shadow-sm" (click)="cargarEmpresas()"
+        [disabled]="!paisSeleccionado && !sectorSeleccionado">
+        <i class="bi bi-search me-2"></i>Buscar
+      </button>
+    </div>
+  </div>
+
+  <hr class="my-4 divider" />
+  <app-tablaConsulta [empresas]="this.empresasSector"></app-tablaConsulta>
+  <!-- Paginador -->
+  <div class="d-flex justify-content-center align-items-center mt-3">
+    <button class="btn btn-outline-light me-2" (click)="paginaAnterior()" [disabled]="pagina === 0">
+      <i class="bi bi-arrow-left"></i> Anterior
+    </button>
+    <span class="mx-3 text-accent page-indicator">Página <strong>{{ pagina + 1 }}</strong></span>
+    <button class="btn btn-outline-info ms-2" (click)="siguientePagina()">
+      Siguiente <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</div>

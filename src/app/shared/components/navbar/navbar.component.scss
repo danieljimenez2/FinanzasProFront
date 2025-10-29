@@ -1,3 +1,9 @@
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .navbar {
   background: linear-gradient(90deg, #0b0b0d 0%, #17171b 100%);
   position: relative;
@@ -90,6 +96,29 @@
             background-color: #424345;
             color: #fff;
           }
+        }
+      }
+    }
+  }
+}
+/* Alineación general para pantallas pequeñas */
+@media (max-width: 991px) { // Ajusta según tu breakpoint de navbar
+  .navbar-collapse {
+    text-align: left; // Alinea todo el contenido a la izquierda
+    padding-left:15px;
+    .navbar-nav {
+      width: 100%; // Asegura que ocupe todo el ancho
+
+      .nav-item {
+        width: 100%;
+        padding-left:10px;
+        .nav-link,
+        .dropdown-item {
+          text-align: left; // Alinea los links a la izquierda
+        }
+
+        .dropdown-menu {
+          text-align: left; // Alinea los items del dropdown
         }
       }
     }

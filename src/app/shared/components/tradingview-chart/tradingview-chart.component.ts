@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tradingview-chart',
@@ -7,10 +7,12 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
   templateUrl: './tradingview-chart.component.html',
   styleUrls: ['./tradingview-chart.component.scss']
 })
-export class TradingviewChartComponent implements AfterViewInit {
+export class TradingviewChartComponent implements OnChanges {
  
   @Input() companySymbol: String | null = null;
-  ngAfterViewInit(): void {
+
+  ngOnChanges(): void {
+    
     // cargar el script de TradingView dinámicamente
     const script = document.createElement('script');
     script.type = 'text/javascript';

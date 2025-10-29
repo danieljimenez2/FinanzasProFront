@@ -11,6 +11,7 @@ h4 {
   }
 }
 
+/* === TABLA OSCURA === */
 .table-fixed {
   width: 100%;
   table-layout: fixed;
@@ -28,39 +29,45 @@ h4 {
   }
 
   thead th {
-    background-color: #4a4a4a;
+    background-color: #2f2f33;
     color: #f1f1f1;
-    cursor: pointer;
   }
 
   tbody tr:nth-child(even) {
-    background-color: #ad9797;
+    background-color: #242427;
   }
 
   tbody tr:nth-child(odd) {
-    background-color: #f5f5f5;
+    background-color: #1f1f23;
   }
 
   tbody tr:hover {
-    background-color: #c0c0c0;
+    background-color: #333338;
+  }
+
+  th:nth-child(1), td:nth-child(1) { width: 70px; }
+  th:nth-child(2), td:nth-child(2) { width: 120px; }
+  th:nth-child(3), td:nth-child(3) { width: 150px; }
+  th:nth-child(5), td:nth-child(5) { width: 150px; }
+
+  th:nth-child(n+4):nth-child(-n+14),
+  td:nth-child(n+4):nth-child(-n+13) {
+    width: 100px;
   }
 }
 
 /* === Colores dinámicos con brillo === */
 .gris {
-  text-shadow: 0 0 2px rgba(180, 180, 180, 0.3);
 }
 
 .verde {
   color: #00c851;
   font-weight: 600;
-  text-shadow: 0 0 6px rgba(0, 200, 81, 0.3);
 }
 
 .amarillo {
   color: #f7a706;
   font-weight: 600;
-  text-shadow: 0 0 6px rgba(255, 187, 51, 0.3);
 }
 
 .rojo {
@@ -75,3 +82,5 @@ th:nth-child(3), td:nth-child(3) { width: 200px; }
 th:nth-child(5), td:nth-child(5) { width: 150px; }
 th:nth-child(n+4):nth-child(-n+14),
 td:nth-child(n+4):nth-child(-n+13) { width: 105px; }
+
+.link{color: white; text-decoration: underline; cursor:pointer;}
